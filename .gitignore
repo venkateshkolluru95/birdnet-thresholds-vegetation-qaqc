@@ -1,0 +1,10 @@
+# project data provided for the exercise; not for public distribution
+data/raw/
+
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# os
+.DS_Store
