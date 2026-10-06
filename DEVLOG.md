@@ -12,3 +12,6 @@ Printed headers, counted rows, binned the validated clips by confidence and prin
 
 A logistic regression has no finite answer when the outcome is always 1 (complete separation). Checked what the BirdNET literature does before choosing: Scanferla et al. 2025 report the 0.99 target as unreliable and unreachable for 16 of 72 species; Tseng et al. 2025 use a model-free rule (lowest confidence with observed precision at or above the target); Thompson et al. 2025 pool species in a mixed model. Decision: Wood and Kahl's curve where it exists, the empirical rule where it cannot, and the rule-of-three bound to say what the evidence certifies.
 
+## 4. Bird code
+
+First run returned no threshold for any species. The fits were fine (checked by refitting with three optimizers in a scratch script); the bug was `model.params.iloc[0]` on a numpy array inside a `try` block that swallowed the error. Fixed, and stopped catching exceptions silently. Second run: Nightjar 0.667, Plover 0.259, Oriole empirical 0.104, Firefinch curve reaches 0.99 at 0.998 with zero validated clips above it. Added the safety rule that a threshold with no validated clips above it is not used. Noticed that even the Nightjar's 74 clips above its threshold certify only 0.96 at 95 percent confidence; recorded as the main limitation.
