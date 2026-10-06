@@ -1,0 +1,34 @@
+species,bin,checked,correct,share_correct
+Abyssinian Nightjar,0.1,43,14,0.32558139534883723
+Abyssinian Nightjar,0.2,11,8,0.7272727272727273
+Abyssinian Nightjar,0.3,5,4,0.8
+Abyssinian Nightjar,0.4,6,6,1.0
+Abyssinian Nightjar,0.5,5,5,1.0
+Abyssinian Nightjar,0.6,6,6,1.0
+Abyssinian Nightjar,0.7,10,10,1.0
+Abyssinian Nightjar,0.8,10,10,1.0
+Abyssinian Nightjar,0.9,54,54,1.0
+African Black-headed Oriole,0.1,33,33,1.0
+African Black-headed Oriole,0.2,16,16,1.0
+African Black-headed Oriole,0.3,13,13,1.0
+African Black-headed Oriole,0.4,11,11,1.0
+African Black-headed Oriole,0.5,4,4,1.0
+African Black-headed Oriole,0.6,6,6,1.0
+African Black-headed Oriole,0.7,5,5,1.0
+African Black-headed Oriole,0.8,23,23,1.0
+African Black-headed Oriole,0.9,39,39,1.0
+Red-billed Firefinch,0.1,77,4,0.05194805194805195
+Red-billed Firefinch,0.2,14,1,0.07142857142857142
+Red-billed Firefinch,0.3,6,0,0.0
+Red-billed Firefinch,0.4,1,0,0.0
+Red-billed Firefinch,0.5,2,0,0.0
+Red-billed Firefinch,0.9,1,1,1.0
+Three-banded Plover,0.1,39,39,1.0
+Three-banded Plover,0.2,14,13,0.9285714285714286
+Three-banded Plover,0.3,8,8,1.0
+Three-banded Plover,0.4,7,7,1.0
+Three-banded Plover,0.5,8,8,1.0
+Three-banded Plover,0.6,3,3,1.0
+Three-banded Plover,0.7,7,7,1.0
+Three-banded Plover,0.8,22,22,1.0
+Three-banded Plover,0.9,42,42,1.0
