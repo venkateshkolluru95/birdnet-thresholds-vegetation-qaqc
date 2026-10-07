@@ -2,7 +2,7 @@
 
 **Question asked.** BirdNET scores every 3-second clip with a confidence between 0 and 1 for a species. An ornithologist checked a sample of clips. Using a 99 percent probability-of-correctness cutoff, assign every clip in `birdnet_predictions.csv` a label in a new `observation` field.
 
-**Short answer.** Two species get a threshold from the fitted curve (Abyssinian Nightjar 0.667, Three-banded Plover 0.259), one species cannot have a curve because every checked clip was correct and gets an evidence-based threshold instead (African Black-headed Oriole 0.104), and one species gets no threshold because the curve only reaches 99 percent above every clip that was ever checked (Red-billed Firefinch). Applying these rules, 21,331 of 29,491 predictions become observations. The labeled file is `outputs/birdnet_predictions_labeled.csv`.
+**Short answer.** Two species get a threshold from the fitted curve: Abyssinian Nightjar 0.667 and Three-banded Plover 0.259. The African Black-headed Oriole cannot have a curve, because every checked clip was correct, and gets an evidence-based threshold of 0.104 instead. The Red-billed Firefinch gets no threshold, because the curve only reaches 99 percent above every clip that was ever checked. Applying these rules, 21,331 of 29,491 predictions become observations. The labeled file is `outputs/birdnet_predictions_labeled.csv`.
 
 Code: [`01_fit_thresholds.py`](01_fit_thresholds.py) (thresholds) and [`02_label_predictions.py`](02_label_predictions.py) (labels and summaries). Every line is commented for a reader who does not code.
 

@@ -1,6 +1,6 @@
 # Handover to the Tech team: turning BirdNET predictions into observations automatically
 
-**Scope.** The SD-card upload and the BirdNET run already work. This document describes what has to happen after BirdNET writes its predictions so that every clip gets an `observation` label without a scientist touching it, and so that the thresholds behind those labels are versioned, auditable and refreshed when new validations arrive.
+**Scope.** The SD-card upload and the BirdNET run already work. This document describes what has to happen after BirdNET writes its predictions. The goal is that every clip gets an `observation` label without a scientist touching it, and that the thresholds behind those labels are versioned, auditable and refreshed when new validations arrive.
 
 Everything below was prototyped in `01_fit_thresholds.py` and `02_label_predictions.py` on the sample data; the numbers in this document come from that run.
 
@@ -125,5 +125,5 @@ The quality of every threshold depends on where the validated clips sit on the c
 
 1. Keep 0.99 as the target, or report 0.95 and 0.99 side by side (Scanferla et al. 2025 found 0.99 unreliable at usual sample sizes).
 2. Minimum validation sample before a species may have observations at all (suggest 100).
-3. Whether to move to a single mixed model across species (Thompson et al. 2025) once the platform has 50 or more species with validations; it stabilizes species with few validations by borrowing strength from the rest, at the cost that each species' threshold then depends on the other species' data and must be audited as one model.
+3. Whether to move to a single mixed model across species (Thompson et al. 2025) once the platform has 50 or more species with validations. It stabilizes species with few validations by borrowing strength from the rest. The cost is that each species' threshold then depends on the other species' data and must be audited as one model.
 4. Whether thresholds are per site or per project area, and how often seasonal re-validation is required.
