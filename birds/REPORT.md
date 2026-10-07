@@ -4,7 +4,7 @@
 
 **Short answer.** Two species get a threshold from the fitted curve: Abyssinian Nightjar 0.667 and Three-banded Plover 0.259. The African Black-headed Oriole cannot have a curve, because every checked clip was correct, and gets an evidence-based threshold of 0.104 instead. The Red-billed Firefinch gets no threshold, because the curve only reaches 99 percent above every clip that was ever checked. Applying these rules, 21,331 of 29,491 predictions become observations: 3,685 through a fitted curve and 17,646 through the Oriole's counting rule. Each labeled row records which rule produced it. The labeled file is `outputs/birdnet_predictions_labeled.csv`.
 
-Code: [`01_fit_thresholds.py`](01_fit_thresholds.py) (thresholds) and [`02_label_predictions.py`](02_label_predictions.py) (labels and summaries). Every line is commented for a reader who does not code.
+Code: [`01_fit_thresholds.py`](01_fit_thresholds.py) (thresholds), [`02_label_predictions.py`](02_label_predictions.py) (labels and summaries) and [`03_assemble_report.py`](03_assemble_report.py) (fills every number in this report from the outputs). Every line is commented for a reader who does not code.
 
 ---
 
@@ -30,7 +30,7 @@ Three things I noticed before fitting anything:
 
 1. The validated clips cover the whole confidence range while the predictions pile up at low confidence (median confidence 0.14 to 0.32 by species). The coverage is uneven: 77 of the 101 Firefinch clips sit below 0.2, and 54 of the 150 Nightjar clips sit at or above 0.9. How the clips were chosen is not recorded. The curves therefore describe "how often BirdNET is right at a given confidence", not "how often it is right overall".
 2. Only 263 of the 551 validated clips carry a recording name, species and confidence that also appear in the predictions file. The other 288 have recording times that are not on the hour, while every prediction file name is, so they cannot be matched by name. The files do not say why; it may be a naming offset or a larger pool of predictions. The thresholds are learned from the validated clips and applied to the file, which assumes both came from the same BirdNET version and settings. The predictions file does not record its version.
-3. Two validated clips (both Nightjar) and four predictions carry a confidence of exactly 1.0. The logit transform, ln(c / (1 - c)), is infinite at 1.0. For the fit I clip confidences to the range 0.0001 to 0.9999 before transforming. Scanferla et al. (2025) dropped such clips instead; clipping keeps them in the fit. Predictions are compared with the threshold on the raw confidence scale, so they are never transformed.
+3. 2 validated clips (Nightjar only) and 4 predictions carry a confidence of exactly 1.0. The logit transform, ln(c / (1 - c)), is infinite at 1.0. For the fit I clip confidences to the range 0.0001 to 0.9999 before transforming. Scanferla et al. (2025) dropped such clips instead; clipping keeps them in the fit. Predictions are compared with the threshold on the raw confidence scale, so they are never transformed.
 
 ## 2. Method
 
@@ -62,7 +62,7 @@ Two situations the standard method cannot handle, and the rule I applied to each
 How to read each row:
 
 - **Nightjar** is the clearest case. Every wrong clip sits below 0.4 (the highest is 0.396) and the curve climbs through 0.99 at 0.667. The bootstrap range is wide (0.46 to 0.83) because only 16 clips were validated between 0.3 and 0.6, exactly where the curve bends. Validating more clips in that band is the first thing to do; whether the range narrows depends on what they show.
-- **Oriole** is the species BirdNET gets right at every score we have evidence for, down to 0.10. A curve cannot be fitted; the evidence says "no errors in 150 clips". With zero errors in n clips the 95 percent upper bound on the error rate is about 3/n (the rule of three, Hanley and Lippman-Hand 1983), so 150 clips support precision of at least 0.98, not 0.99. Supporting 0.99 this way would need about 300 validated clips with no errors, drawn afresh from above the threshold. I apply 0.104 as the threshold because that is what the data support, and I label the table accordingly rather than claiming 0.99. These 17,646 observations rest on a counting rule, not on a fitted 0.99 curve, and the labeled file says so in its `threshold_method` column.
+- **Oriole** is the species BirdNET gets right at every score we have evidence for, down to 0.10. A curve cannot be fitted; the evidence says "no errors in 150 clips". With zero errors in n clips the 95 percent upper bound on the error rate is about 3/n (the rule of three, Hanley and Lippman-Hand 1983), so 150 clips support precision of at least 0.98, not 0.99. Supporting 0.99 this way would need 299 validated clips with no errors, drawn afresh from above the threshold. I apply 0.104 as the threshold because that is what the data support, and I label the table accordingly rather than claiming 0.99. These 17,646 observations rest on a counting rule, not on a fitted 0.99 curve, and the labeled file says so in its `threshold_method` column.
 - **Plover** has a single wrong clip, at confidence 0.264, and that one clip decides the curve. The fitted threshold (0.259) sits just below it, which is why the bootstrap range is so wide (0.22 to 0.80), why 392 of the 1,000 resamples had no wrong clip and no curve, and why 1 of the 100 validated clips above the threshold is wrong. Re-checking that one clip is the first thing to do. If it turns out to be correct, the Plover becomes an all-correct case like the Oriole and gets a counting-rule threshold.
 - **Firefinch** is the opposite case. Only 6 of 101 validated clips were correct and only one of those had a high score. The curve technically reaches 0.99 at confidence 0.998, but no validated clip sits that high, so there is no evidence at that score. No Firefinch prediction is labeled as an observation. If Firefinch matters to the project, the fix is to validate its high-confidence clips specifically (there are only 8 predictions above 0.5 in this dataset) or to accept a lower precision target for this species.
 
@@ -77,25 +77,25 @@ How to read each row:
 | African Black-headed Oriole | 18,054 | 17,646 | 97.7% | 35 of 43 (35 had Oriole predictions) |
 | Abyssinian Nightjar | 10,187 | 3,147 | 30.9% | 16 of 43 (27 had Nightjar predictions) |
 | Three-banded Plover | 1,015 | 538 | 53.0% | 12 of 43 (22 had Plover predictions) |
-| Red-billed Firefinch | 235 | 0 | 0% | 0 of 43 (31 had Firefinch predictions) |
+| Red-billed Firefinch | 235 | 0 | 0.0% | 0 of 43 (31 had Firefinch predictions) |
 | **All** | **29,491** | **21,331** | **72.3%** | **39 of 43** |
 
-The output file keeps every original column, in the original row order, with the same 29,491 rows (the script checks this), and adds four columns:
+The output file keeps every original column, in the original row order, with the same 29,491 rows (the script checks this), and adds 4 columns:
 
 - `threshold_confidence` and `threshold_method`: the cutoff applied to the row and how it was set (fitted curve, or the counting rule for the Oriole), so a reader can see which rule produced each observation.
 - `observation`: the species common name when the clip passes its species threshold, otherwise empty.
-- `label_reason`: `at_or_above_threshold` (21,331 clips), `below_threshold` (7,925) or `no_threshold_for_species` (235, all Firefinch). A fourth value, `invalid_input`, is reserved for rows with a missing species or a confidence outside 0 to 1; none occur in this file. An empty `observation` is therefore never ambiguous, and it never means the species was absent: it means the prediction was not accepted.
+- `label_reason`: `at_or_above_threshold` (21,331 clips), `below_threshold` (7,925) or `no_threshold_for_species` (235, all Red-billed Firefinch). A fourth value, `invalid_input`, is reserved for rows with a missing species or a confidence outside 0 to 1; 0 rows carry it in this file. An empty `observation` is therefore never ambiguous, and it never means the species was absent: it means the prediction was not accepted.
 
 "Share kept" is not recall. The validation set contains only clips that BirdNET flagged, so it says nothing about calls BirdNET missed; precision and recall have different denominators (Knight et al. 2017). The Nightjar keeps 31 percent of its predictions, which is a statement about how many predictions survive the cutoff, not about how many Nightjar calls were detected.
 
-Per-recorder counts for all 43 recorders and all four species, including zeros, are in `outputs/summary_by_recorder.csv`. Four recorders have no observation of any species; that is a statement about accepted predictions, not about absence. Three 3-second segments carry predictions for two different species at once; both rows are labeled independently, which is correct because two birds can call in the same 3 seconds.
+Per-recorder counts for all 43 recorders and all four species, including zeros, are in `outputs/summary_by_recorder.csv`. 4 recorders have no observation of any species; that is a statement about accepted predictions, not about absence. 3 segments of 3 seconds carry predictions for two different species at once; both rows are labeled independently, which is correct because two birds can call in the same 3 seconds.
 
 ## 5. Decisions made along the way
 
 | Decision | Choice | Why |
 |---|---|---|
 | x-axis of the regression | logit of confidence | Wood and Kahl recommend it; the raw 0 to 1 scale compresses the high scores. The threshold is converted back to confidence for use. |
-| Confidence of exactly 1.0 | clipped to 0.9999 before the logit, in the validation table only | logit(1) is infinite; dropping the two clips would waste evidence. Predictions are compared on the raw scale and are not transformed. |
+| Confidence of exactly 1.0 | clipped to 0.9999 before the logit, in the validation table only | logit(1) is infinite; dropping the 2 clips would waste evidence. Predictions are compared on the raw scale and are not transformed. |
 | BirdNET sensitivity setting | assumed default (1.0) | BirdNET's sensitivity setting (0.5 to 1.5) controls how sharply the raw score is squashed into the 0 to 1 confidence, and Wood and Kahl's logit formula divides by it. The setting used was not supplied. Dividing every x by a constant only rescales the slope; the threshold is unchanged once converted back to the confidence scale. This holds as long as the validated clips and the predictions were produced with the same setting, which the files do not record. |
 | Species with all validations correct | lowest validated confidence, with the precision lower bound stated and the rule recorded in `threshold_method` | A curve does not exist; forcing one with penalties makes the result depend on the penalty. The counting rule follows the logic of Tseng et al. (2025). The stricter alternative, assigning no Oriole observations until 0.99 is shown, was considered and rejected: it would discard 150 of 150 correct validations, and by the same standard no species in this dataset qualifies, since even the Nightjar's 74 clips above its threshold support only 0.96. The sample size, not the method, is what limits the bound, and the report says so. |
 | Threshold above every validated clip | not used | An extrapolated threshold has no evidence behind it. |
