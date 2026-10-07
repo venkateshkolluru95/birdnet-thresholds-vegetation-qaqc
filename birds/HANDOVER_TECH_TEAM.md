@@ -8,7 +8,7 @@ Everything below was prototyped in `01_fit_thresholds.py` and `02_label_predicti
 
 ## 1. The logic in one paragraph
 
-For each species, a small logistic regression relates "the ornithologist said the prediction was correct" (1/0) to the logit of BirdNET's confidence. Solving the fitted curve for a 0.99 probability gives the species' confidence threshold. A prediction at or above its species' threshold is an observation. Where a curve cannot be fitted because every validated clip was correct, the threshold is the lowest validated confidence, and the table records how much precision that evidence certifies. Where the curve reaches 0.99 only above every validated clip, the species gets no threshold and no observations until more clips are validated.
+For each species, a small logistic regression relates "the ornithologist said the prediction was correct" (1/0) to the logit of BirdNET's confidence. Solving the fitted curve for a 0.99 probability gives the species' confidence threshold. A prediction at or above its species' threshold is an observation. Where a curve cannot be fitted because every validated clip was correct, the threshold is the lowest validated confidence, the table records the precision lower bound that evidence supports, and every labeled row carries the method that produced it. Where the curve reaches 0.99 only above every validated clip, the species gets no threshold and no observations until more clips are validated.
 
 ## 2. Tables
 
@@ -18,7 +18,7 @@ One row per clip per species. Columns used: `prediction_id`, `recording_file`, `
 
 ### 2.2 `validation_results` (exists; written when an ornithologist reviews clips)
 
-One row per reviewed clip: `validation_id`, `prediction_id` (foreign key into predictions; today the link is only through the filename, which matched 263 of 551 rows in the sample), `species_code`, `confidence`, `outcome` (1 correct, 0 wrong), `validator`, `validated_at`, `birdnet_version`.
+One row per reviewed clip: `validation_id`, `prediction_id` (foreign key into predictions; today the link is only through the recording name, species and confidence, which matched 263 of 551 rows in the sample), `species_code`, `confidence`, `outcome` (1 correct, 0 wrong), `validator`, `validated_at`, `birdnet_version`.
 
 ### 2.3 `species_thresholds` (new; one row per species per fitting run)
 
@@ -32,12 +32,12 @@ One row per reviewed clip: `validation_id`, `prediction_id` (foreign key into pr
 | method | text | `logistic_curve`, `empirical_all_correct`, `none_unsupported`, `none_unreachable` |
 | intercept, slope | numeric | fitted curve (null for empirical) |
 | threshold_confidence | numeric | the cutoff on BirdNET's 0 to 1 scale; null when no threshold |
-| ci95_low, ci95_high | numeric | bootstrap range |
+| ci95_low, ci95_high, bootstrap_fits_ok | numeric, int | bootstrap range and how many of the 1,000 resamples could be fitted; the range is conditional on those |
 | n_validated, n_correct | int | evidence behind the fit |
 | n_validated_above, n_correct_above | int | clips at or above the threshold and how many were correct |
-| precision_lower_bound_95 | numeric | exact binomial lower bound; the number to show auditors |
+| precision_lower_bound_95 | numeric | exact binomial lower bound among the validated clips at or above the threshold; the number to show auditors, with its limits stated (same clips that chose the threshold; clips share recordings) |
 | fitted_at, fitted_by, validation_max_date | timestamp, text, date | provenance |
-| is_current | bool | exactly one current row per (project, site, species, birdnet_version) |
+| is_current | bool | exactly one current row per (project, site, species, birdnet_version, birdnet_sensitivity, target_precision) |
 
 ### 2.4 `bird_observations` (new; a view, not a table)
 
@@ -46,7 +46,7 @@ Applying thresholds is a join plus a CASE, so it should be a view that is always
 ```sql
 CREATE VIEW bird_observations AS
 SELECT p.*,
-       t.threshold_confidence,
+       t.threshold_id, t.threshold_confidence, t.method AS threshold_method,
        CASE WHEN t.threshold_confidence IS NOT NULL
              AND p.confidence >= t.threshold_confidence THEN p.common_name END AS observation,
        CASE WHEN t.threshold_id IS NULL                    THEN 'no_threshold_for_species'
@@ -54,14 +54,16 @@ SELECT p.*,
             ELSE                                                 'below_threshold' END AS label_reason
 FROM birdnet_predictions p
 LEFT JOIN species_thresholds t
-       ON t.species_code    = p.species_code
-      AND t.project_id      = p.project_id
-      AND t.birdnet_version = p.birdnet_version
+       ON t.species_code        = p.species_code
+      AND t.project_id          = p.project_id
+      AND t.site_id             = p.site_id
+      AND t.birdnet_version     = p.birdnet_version
+      AND t.birdnet_sensitivity = p.birdnet_sensitivity
       AND t.is_current
       AND t.threshold_confidence IS NOT NULL;
 ```
 
-If dashboards need a materialized table for speed, refresh it whenever `species_thresholds` changes.
+The join must match on every column that scopes a threshold (site and sensitivity included), and `is_current` must be unique on that same key, or one prediction can join to several thresholds and be accepted by the wrong one. Add a check that confidence is within 0 to 1 before the comparison, as the Python script does. If dashboards need a materialized table for speed, refresh it whenever `species_thresholds` changes, and keep `threshold_id` on every published label so an old label can always be traced to the threshold that produced it.
 
 ## 3. The fitting job (Python 3.13, runs in the existing pipeline)
 
@@ -74,52 +76,55 @@ Inputs: all `validation_results` rows for one (project, site, birdnet_version). 
    - Otherwise fit `statsmodels.Logit(outcome, [1, x])`; if the optimizer does not converge, treat as `none_unreachable`. Solve `t = (logit(0.99) - b0) / b1`; `threshold = 1 / (1 + exp(-t))`; if `threshold > 0.9999` or `slope <= 0`, method `none_unreachable`.
 3. Count validated clips at or above the threshold; if zero, `method = none_unsupported`, threshold null.
 4. `precision_lower_bound_95 = scipy.stats.beta.ppf(0.05, k, n_above - k + 1)` (equals `0.05 ** (1 / n_above)` when all correct).
-5. Bootstrap 1,000 resamples for `ci95_low/high` (skip resamples that fail; record how many succeeded).
+5. Bootstrap 1,000 resamples for `ci95_low/high`; skip resamples that have no curve and store how many succeeded in `bootstrap_fits_ok`, because the range only describes those.
 6. Insert rows; set `is_current` on the new rows and clear it on the previous ones, inside one transaction.
 
-Runtime is seconds; the job can run synchronously after each validation batch. Dependencies: pandas, numpy, scipy, statsmodels. The biometrics team can reproduce any row in R with `glm(outcome ~ logit_score, family = binomial)`; the coefficients are identical.
+Runtime is seconds; the job can run synchronously after each validation batch. Dependencies: pandas, numpy, scipy, statsmodels. The biometrics team can reproduce any row in R with `glm(outcome ~ logit_score, family = binomial)`; both maximise the same likelihood and the coefficients agree to the solver's tolerance. Store full-precision thresholds and compare with full precision; the displayed 0.667 would drop three Nightjar observations that 0.666638 keeps.
 
 ## 4. When to run it
 
 | Trigger | Action |
 |---|---|
-| New validations committed for a species (suggest: at least 20 new clips, or any new clip for a species with fewer than 150) | refit that species |
-| New BirdNET version or changed sensitivity/overlap settings | all existing thresholds become non-current for that version; new validations are required |
+| New validations committed for a species (starting point: at least 20 new clips, or any new clip for a species with fewer than 150) | refit that species |
+| New BirdNET version or changed sensitivity/overlap settings | no threshold for the new configuration until it has its own validations; old thresholds stay current for the old configuration and its old predictions |
 | New project or site | no thresholds inherited; validation campaign first (Wood and Kahl: thresholds are site and season specific) |
-| Monthly | re-run as a check; alert if any species' threshold moves outside its previous CI |
+| Monthly | compare the precision of the month's newly validated observations with the stored lower bound (Section 7); refitting the same data again proves nothing |
 
 ## 5. Validation sampling the platform should support
 
 The quality of every threshold depends on where the validated clips sit on the confidence axis. The platform should draw validation clips for the ornithologist, not leave it to hand selection:
 
-- stratified across confidence bins (for example 10 bins of 0.1) with a floor per bin, plus an extra draw above 0.7, as Wood and Kahl recommend;
-- a per-species target of about 300 clips with none wrong above the threshold if 0.99 is to be certified at 95 percent confidence (rule of three: 3/n); 150 clips certify about 0.98;
+- spread across confidence bins (for example 10 bins of 0.1) with a floor per bin, plus an extra draw above 0.7, in line with Wood and Kahl; the bin count and floors are starting values to tune;
+- record how each clip was chosen (its bin and the chance of being drawn), so later precision estimates can be weighted;
+- a per-species target of about 300 freshly drawn clips above the threshold with none wrong, if 0.99 is to be supported at 95 percent confidence (rule of three: 3/n); 150 clips support about 0.98;
 - store `prediction_id` with each validation so clips always link back to their prediction row.
 
-## 6. Edge cases the code must handle (all seen in the sample)
+## 6. Edge cases the code must handle
 
 | Case | Seen in | Handling |
 |---|---|---|
-| All validated clips correct (complete separation) | Oriole 150/150 | empirical threshold; lower bound reported, not 0.99 |
+| All validated clips correct (complete separation) | Oriole 150/150 | empirical threshold; lower bound reported, not 0.99; `threshold_method` says so on every row |
 | One wrong clip decides the fit | Plover 149/150 | wide CI reported; flag for re-review of that clip |
 | Threshold above all validated clips | Firefinch | no threshold; dashboard shows "needs high-confidence validation" |
 | Confidence exactly 1.0 | predictions file | clip to 0.9999 before logit |
 | Species present in predictions but with no validations | none here, common in production | `no_threshold_for_species`; never silently treated as observations |
 | Same 3-second segment, two species | 3 segments | label each row independently |
-| Validation clips not matching a prediction row | 288 of 551 | fit still valid; store `prediction_id` going forward |
+| Validation clips not matching a prediction row | 288 of 551 | cause unresolved (their recording times are not on the hour); store `prediction_id` going forward |
 
 ## 7. Monitoring after launch
 
-- Keep validating a small random sample of **observations** (say 20 per species per month). Observed precision should stay at or above the certified bound; if it falls below, re-fit.
-- Show recall honestly: the Nightjar keeps 31 percent of its predictions, the Oriole 98 percent. If an analysis needs recall (vocal activity rates, density), a lower target or an aggregation rule (for example two or more observations in the same hour, as in Kelly et al. 2023) should be offered as a second view, not by lowering the observation threshold.
-- Dashboard tiles: per species, the threshold, its CI, certified precision, number of validations, date of last refit, and the share of predictions kept.
+- Keep validating a small random sample of **observations** (say 20 per species per month), and judge them over a rolling window of at least 100, because one error in 20 happens a third of the time even at a true precision of 0.98. Alert when the exact binomial lower bound of the window falls below the species' stored bound; then re-fit with the new clips.
+- Show the share kept honestly, and do not call it recall: the Nightjar keeps 31 percent of its predictions, the Oriole 98 percent. If an analysis needs recall (vocal activity rates, density), a lower target or an aggregation rule (for example a minimum number of observations per hour, as Kelly et al. 2023 did for owls) should be offered as a second view, not by lowering the observation threshold.
+- Dashboard tiles: per species, the threshold and its method, its bootstrap range with the resamples fitted, the precision lower bound, number of validations, date of last refit, and the share of predictions kept.
 
 ## 8. Tests to ship with the job
 
-- Unit: a synthetic validation set with known intercept and slope must return the known threshold within tolerance.
-- Unit: all-correct input returns `empirical_all_correct` and `threshold = min(confidence)`; all-wrong input returns no threshold.
-- Schema: confidence within [0, 1]; species codes in validations exist in predictions; no duplicate `prediction_id` per species; `outcome` only 0/1.
-- Regression: the four species in the sample must reproduce the thresholds in `outputs/species_thresholds.csv` (0.667, 0.104, 0.259, none).
+- Unit: a fixed validation table with stored reference coefficients must return the same threshold (a golden file, not a random sample, since a random sample never returns the exact generating curve).
+- Unit: all-correct input returns `empirical_all_correct` and `threshold = min(confidence)`; all-wrong input returns no threshold; a curve above every validated clip returns `none_unsupported`; a species with no validations returns no row and its predictions get `no_threshold_for_species`.
+- Schema: confidence within [0, 1]; species codes in validations exist in predictions; no duplicate `prediction_id` per species; `outcome` only 0/1; exactly one current threshold per scope key.
+- Regression: the four species in the sample must reproduce `outputs/species_thresholds.csv` at full precision and the labeled totals (21,331 / 7,925 / 235), with all 43 recorders and all four species present in the recorder summary.
+
+References: Kelly KG, Wood CM, McGinn KA, et al. (2023). Estimating population size for California spotted owls and barred owls across the Sierra Nevada ecosystem with bioacoustics. Ecological Indicators 154: 110851.
 
 ## 9. Decisions that need a scientist, not a developer
 

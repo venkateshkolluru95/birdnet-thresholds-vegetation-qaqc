@@ -9,7 +9,7 @@ is hidden behind an empty cell.
 
 INPUT : data/raw/birds/birdnet_predictions.csv
         birds/outputs/species_thresholds.csv
-OUTPUT: birds/outputs/birdnet_predictions_labeled.csv   (all original columns + observation + label_reason)
+OUTPUT: birds/outputs/birdnet_predictions_labeled.csv   (all original columns + threshold_confidence, threshold_method, observation, label_reason)
         birds/outputs/summary_by_species.csv            (predictions vs observations per species)
         birds/outputs/summary_by_recorder.csv           (observations per recorder and species)
         birds/figures/fig2_predictions_vs_observations.png
@@ -32,9 +32,9 @@ FIG_DIR = os.path.join(ROOT, "birds", "figures")
 # ---------------------------------------------------------------------------
 pred = pd.read_csv(PRED_FILE)                                   # 29,491 rows, one per 3-second clip and species
 n_rows_in = len(pred)                                           # remembered so we can prove no row was lost or duplicated
-thr = pd.read_csv(THR_FILE)[["species", "threshold_confidence"]]   # we only need the species and its cutoff here
+thr = pd.read_csv(THR_FILE)[["species", "threshold_confidence", "method"]].rename(columns={"method": "threshold_method"})   # the cutoff and how it was set
 
-# left join: every prediction keeps its row; the threshold column is added (NaN if the species has none)
+# left join: every prediction keeps its row; the threshold and its method are added (NaN if the species has none)
 pred = pred.merge(thr, how="left", left_on="common_name", right_on="species").drop(columns="species")
 assert len(pred) == n_rows_in, "the join changed the number of rows"   # a duplicated species in the thresholds table would do this
 
@@ -70,6 +70,7 @@ by_species.to_csv(os.path.join(OUT_DIR, "summary_by_species.csv"), index=False)
 by_recorder = (pred[pred["observation"] != ""]
                  .pivot_table(index="folder", columns="common_name", values="observation",
                               aggfunc="size", fill_value=0)
+                 .reindex(index=sorted(pred["folder"].unique()), columns=sorted(pred["common_name"].unique()), fill_value=0)   # keep recorders and species with zero observations
                  .reset_index()
                  .rename(columns={"folder": "recorder"}))
 by_recorder.to_csv(os.path.join(OUT_DIR, "summary_by_recorder.csv"), index=False)

@@ -13,12 +13,12 @@ being correct. Predictions above that confidence count as observations.
 This script does that for each species and handles the two cases where the curve cannot
 give an answer:
   * every checked clip is correct -> no curve can be fitted (statisticians call this
-    "complete separation"). We then use the simplest rule in the literature (Tseng et al.
-    2025): threshold = the lowest confidence that was checked, and we report how much
-    precision that many all-correct clips can actually certify (rule of three).
-  * the curve never reaches 0.99 below a confidence of 1.0 -> no threshold exists and no
-    prediction of that species can be called an observation (same finding as Scanferla et
-    al. 2025 for 16 of 72 species).
+    "complete separation"). We then use a counting rule instead of a curve, in the spirit of
+    Tseng et al. (2025): threshold = the lowest confidence that was checked, and we report the
+    lower bound on precision that many all-correct clips support (rule of three).
+  * the curve reaches 0.99 only above every checked clip -> the threshold has no evidence
+    behind it and no prediction of that species is called an observation (Scanferla et al.
+    2025 met the related case, thresholds above a confidence of 1, for 16 of 72 species).
 
 INPUT : data/raw/birds/validation_results.csv   (551 ornithologist-checked clips)
 OUTPUT: birds/outputs/species_thresholds.csv     (one row per species, the decision table)
@@ -38,8 +38,8 @@ matplotlib.use("Agg")                       # draw to files, not to a screen (wo
 import matplotlib.pyplot as plt
 
 # During the bootstrap, some random resamples happen to contain only correct clips; statsmodels
-# then warns about "perfect separation". That is expected and those resamples are skipped below,
-# so the warnings would only clutter the log. We handle separation explicitly, never silently.
+# then warns about "perfect separation". That is expected: those resamples are skipped and counted
+# below (bootstrap_fits_ok), so the warnings would only clutter the log.
 warnings.simplefilter("ignore", PerfectSeparationWarning)
 warnings.simplefilter("ignore", ConvergenceWarning)
 warnings.simplefilter("ignore", RuntimeWarning)
@@ -96,14 +96,14 @@ def threshold_from_curve(intercept, slope, p=TARGET_PRECISION):
     """
     Solve the fitted curve for the x where P(correct) = p, then convert to a confidence.
     This is Wood & Kahl's formula: threshold_logit = (logit(p) - intercept) / slope.
-    Returns (threshold_logit, threshold_confidence); confidence is > 1 impossible, so we
-    return None for the confidence when the solution lies beyond a confidence of CLIP_HIGH.
+    Returns (threshold_logit, threshold_confidence). A solution above CLIP_HIGH (the cap used
+    for the logit) is returned as None: no checked clip can sit that high, so it is not usable.
     """
-    if slope is None or slope <= 0:                  # a flat or downward curve cannot reach 99%
+    if slope is None or slope <= 0:                  # a flat or downward curve: no upward crossing to solve for
         return None, None
     t_logit = (logit(p) - intercept) / slope
     t_conf = inv_logit(t_logit)
-    if t_conf > CLIP_HIGH:                           # 0.99 is only reached above the maximum possible score
+    if t_conf > CLIP_HIGH:                           # 0.99 is only reached above the logit cap, beyond any checked clip
         return t_logit, None
     return t_logit, t_conf
 
@@ -113,8 +113,8 @@ def precision_lower_bound(n_correct, n_total, confidence_level=0.95):
     Example: 150 correct of 150 -> 0.980 (we are 95% sure precision is at least 98%).
     This is the formal version of the 'rule of three' (3/n ~ 0.02 for n = 150).
     """
-    if n_total == 0:
-        return np.nan
+    if n_total == 0 or n_correct == 0:               # nothing above the threshold: undefined; all wrong: the bound is 0
+        return np.nan if n_total == 0 else 0.0
     if n_correct == n_total:                         # all correct: closed form
         return (1 - confidence_level) ** (1 / n_total)
     return beta.ppf(1 - confidence_level, n_correct, n_total - n_correct + 1)
@@ -168,7 +168,7 @@ for species, grp in val.groupby("species"):
             method += "; 0.99 not reachable below confidence 1.0 -> no threshold"
 
     # How many checked clips sit at or above the chosen threshold, and how many were correct?
-    # This is the plain-counting evidence behind the threshold, independent of any curve.
+    # This is the plain-counting evidence behind the threshold (the clips were selected by it).
     if t_conf is not None:
         above = grp[grp["confidence"] >= t_conf]
         n_above, k_above = len(above), int(above["outcome"].sum())
@@ -210,8 +210,8 @@ def verdict(r):
         return "No observations possible: curve never reaches 99% within the score range."
     if r["method"].startswith("empirical"):
         return (f"All {r['n_validated']} checked clips correct; threshold = lowest checked score "
-                f"({r['threshold_confidence']:.3f}). Data certify precision >= "
-                f"{r['precision_lower_bound_95']:.3f}, not 0.99; more validation needed to certify 0.99.")
+                f"({r['threshold_confidence']:.3f}). Checked clips support precision >= "
+                f"{r['precision_lower_bound_95']:.3f}, not 0.99; more validation needed to support 0.99.")
     return (f"Curve reaches 99% at confidence {r['threshold_confidence']:.3f} "
             f"(95% range {r['threshold_ci95_low']:.3f} to {r['threshold_ci95_high']:.3f}).")
 
@@ -245,10 +245,10 @@ for ax, (species, grp) in zip(axes.ravel(), val.groupby("species")):
     r = thresholds.set_index("species").loc[species]
     if t_conf is not None:
         ax.axvline(t_conf, color="#B8860B", lw=2)
-        ax.text(t_conf + 0.02, 0.5, f"threshold {t_conf:.3f}", color="#B8860B", fontsize=10)
+        ax.text(t_conf + 0.02, 0.5, f"threshold {t_conf:.3f}" + ("\n(lowest checked clip;\nall correct, no curve)" if b0 is None else ""), color="#B8860B", fontsize=10)
     elif "unsupported" in r["method"]:
-        ax.text(0.45, 0.55, "no threshold used:\ncurve reaches 0.99 only at 0.998,\nabove every validated clip",
-                ha="center", fontsize=10, color="#993C1D")
+        ax.text(0.45, 0.55, f"no threshold used:\ncurve reaches 0.99 only at {inv_logit((logit(TARGET_PRECISION) - b0) / b1):.3f},"
+                "\nabove every validated clip", ha="center", fontsize=10, color="#993C1D")
     else:
         ax.text(0.5, 0.5, "no threshold:\ncurve never reaches 0.99", ha="center", fontsize=10, color="#993C1D")
     ax.set_title(f"{species}  (n = {r.n_validated}, correct = {r.n_correct})", fontsize=11)
