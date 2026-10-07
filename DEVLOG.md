@@ -29,3 +29,11 @@ I worked out the KEY / PARENT_KEY chain and which entity list each id points to.
 The problems were in the content. Plots 18 and 21 were submitted twice. Plot 23 was not viable and backup 46 was surveyed. The six shrubland primaries have no registration in the exports. Transects run 23 to 66 m and all bear eastward. Typed names use spaces and some are misspelled.
 
 The species rows decided the design. The same field entity can carry two labels: its typed name when first created and its `herb_###` placeholder when reused. So species are counted on the entity UUID, not on the label. The identification list `species_extra_ids` keys on the placeholder number, so it is joined on that number and attached as a lookup.
+
+## 6. Vegetation code
+
+Four scripts: join, checks, report tables and maps, report assembly. Each rule is a few lines with the SOP sentence in its docstring. The SOP numbers sit in one dictionary and my own tolerances in another. Every issue row carries its population (retained, rejected, shared) and the exact record. Rules that find nothing are listed as pass.
+
+Three findings came from the code rather than from reading. The form's end-of-survey species count differs from the rows in most submissions. Its calculation tests the list-species field at the wrong nesting level, so it only counts quadrats with additional species; this matches all 32 submissions exactly. Fourteen of 30 recorded midpoints lie more than 5 m off the straight A-B line, so quadrat distances are measured against the A-mid-B transect. And the quadrats of Plot 05 sit 13 to 27 m from the registered transect, which only became obvious on the zoomed map.
+
+A fuzzy match of typed names against the project list found almost nothing, because the misspelled genera are not on the list. Typed names are matched against the GBIF backbone instead, with the result cached.

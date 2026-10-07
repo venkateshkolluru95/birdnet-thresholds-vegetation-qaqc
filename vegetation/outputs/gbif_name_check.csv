@@ -1,0 +1,43 @@
+typed_name,match_type,gbif_name,gbif_status
+Abitulum ramosum,HIGHERRANK,Plantae,ACCEPTED
+Alectra orobanchoides,EXACT,Alectra orobanchoides,ACCEPTED
+Aristida scabrivalvis,EXACT,Aristida scabrivalvis,ACCEPTED
+Asparagus africanus,EXACT,Asparagus africanus,ACCEPTED
+Boerhavia coccinea,EXACT,Boerhavia coccinea,ACCEPTED
+Brachiara dura,FUZZY,Brachiaria dura,SYNONYM
+Cenchrus bifloris,FUZZY,Cenchrus biflorus,ACCEPTED
+Chamaecrista absus,EXACT,Chamaecrista absus,ACCEPTED
+Citrullus naudinianus,EXACT,Citrullus naudinianus,ACCEPTED
+Commelina africana,EXACT,Commelina africana,ACCEPTED
+Crotolaria heidmannii,FUZZY,Crotalaria heidmannii,ACCEPTED
+Crotolaria sphaerocarpa,FUZZY,Crotalaria sphaerocarpa,ACCEPTED
+Cyperus margaritaceus,EXACT,Cyperus margaritaceus,ACCEPTED
+Erlangea misera,EXACT,Erlangea misera,ACCEPTED
+Evolvulus alsinoides,EXACT,Evolvulus alsinoides,ACCEPTED
+Gisekia pharnaceoides,EXACT,Gisekia pharnaceoides,ACCEPTED
+Hermbstaedtia linearis,EXACT,Hermbstaedtia linearis,ACCEPTED
+Hibiscus sidiformis,EXACT,Hibiscus sidiformis,ACCEPTED
+Indigofera filipes,EXACT,Indigofera filipes,ACCEPTED
+Ipomea leucanthemum,FUZZY,Ipomoea leucanthemum,ACCEPTED
+Ipomea sinensis,FUZZY,Ipomoea sinensis,ACCEPTED
+Jacquemontia tannifolia,HIGHERRANK,Jacquemontia,ACCEPTED
+Justicia divaricata,HIGHERRANK,Acanthaceae,ACCEPTED
+Macrotalyma daltonii,FUZZY,Macrotyloma daltonii,ACCEPTED
+Oldenladia corymbosa,FUZZY,Oldenlandia corymbosa,ACCEPTED
+Panicum hirtum,EXACT,Panicum hirtum,ACCEPTED
+Pavonia clathrata,EXACT,Pavonia clathrata,ACCEPTED
+Pechuel-loeschea leubnitziae,EXACT,Pechuel-loeschea leubnitziae,ACCEPTED
+Phyllanthus pantandrus,FUZZY,Phyllanthus pentandrus,ACCEPTED
+Pogonarthria fleckii,EXACT,Pogonarthria fleckii,ACCEPTED
+Polygala erioptera,EXACT,Polygala erioptera,ACCEPTED
+Rhynchosia minima,EXACT,Rhynchosia minima,ACCEPTED
+Rhynchosia totta,EXACT,Rhynchosia totta,ACCEPTED
+Senna obtusifolia,EXACT,Senna obtusifolia,ACCEPTED
+Setaria pumila,EXACT,Setaria pumila,ACCEPTED
+Sida chrysantha,EXACT,Sida chrysantha,ACCEPTED
+Striga gesnerioides,EXACT,Striga gesnerioides,ACCEPTED
+Tephrosia purpurea,EXACT,Tephrosia purpurea,ACCEPTED
+Thunbergia reticulata,EXACT,Thunbergia reticulata,ACCEPTED
+Xenostegia pinnata,EXACT,Xenostegia pinnata,ACCEPTED
+Xenostegia tridentata,EXACT,Xenostegia tridentata,ACCEPTED
+Zornia glochidiala,FUZZY,Zornia glochidiata,ACCEPTED

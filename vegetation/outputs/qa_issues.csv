@@ -1,0 +1,372 @@
+check_id,check_name,severity,level,population,plot_name,item_key,detail
+S01,duplicate submission for plot,info,survey,retained,SavMon_LW_Plot_18,uuid:cf362fbc-991a-4db1-8d49-6c1d29fd49c8,2 submissions; resolved by ODK review state
+S01,duplicate submission for plot,info,survey,rejected,SavMon_LW_Plot_18,uuid:81e3bc36-700f-465d-a1aa-48ebed04a78c,2 submissions; resolved by ODK review state
+S01,duplicate submission for plot,info,survey,retained,SavMon_LW_Plot_21,uuid:49d73df9-2d36-4a1e-aa29-6f94f23a7513,2 submissions; resolved by ODK review state
+S01,duplicate submission for plot,info,survey,rejected,SavMon_LW_Plot_21,uuid:c6cc7231-7af6-4bc5-b281-565c53f21763,2 submissions; resolved by ODK review state
+S02,rejected submission (excluded from summaries),info,survey,rejected,SavMon_LW_Plot_18,uuid:81e3bc36-700f-465d-a1aa-48ebed04a78c,"recorder Grace, device clock 2026-05-26 14:13, 26 min"
+S02,rejected submission (excluded from summaries),info,survey,rejected,SavMon_LW_Plot_21,uuid:c6cc7231-7af6-4bc5-b281-565c53f21763,"recorder Sam, device clock 2026-05-26 14:48, 25 min"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_01,uuid:9fd08bb2-7c3f-49f5-8ad8-dd6f45da94da,"stored 19, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_02,uuid:e63b6ad6-7893-4cca-a1db-00fbde18a2aa,"stored 17, recomputed 19"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_04,uuid:4137458f-31e5-4355-b4ad-47858fb11503,"stored 18, recomputed 19"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425,"stored 12, recomputed 19"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_07,uuid:430e85a3-44ce-45f4-9974-c6a61569e78b,"stored 17, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_08,uuid:359a5da6-d237-4203-b838-8596bdbd4935,"stored 19, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_09,uuid:95cde0b4-8b49-4f5d-a3c7-6765e1c06466,"stored 19, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_10,uuid:3865525f-1d45-40fc-83ca-7e30fafe6b54,"stored 18, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_14,uuid:fdf5f121-0a7f-4769-85bb-4717e0361eb4,"stored 11, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_15,uuid:54452130-d92e-4996-a0d7-9401811b9ed7,"stored 17, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_16,uuid:599e04cf-832f-4535-8305-967918d12026,"stored 19, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_19,uuid:9ec95900-d4e8-4825-be75-07834b98cc6c,"stored 16, recomputed 19"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_20,uuid:b816a9b4-f338-432a-83d7-1cf354583f0f,"stored 19, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_21,uuid:49d73df9-2d36-4a1e-aa29-6f94f23a7513,"stored 19, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,rejected,SavMon_LW_Plot_21,uuid:c6cc7231-7af6-4bc5-b281-565c53f21763,"stored 18, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_22,uuid:ce4f999d-8849-42a9-a870-1205d47b1903,"stored 16, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_24,uuid:ef5c5535-1739-481b-af66-71061de5dcd2,"stored 19, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_25,uuid:8e5f5c9d-d697-4358-b766-db4a41f28c3e,"stored 19, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_26,uuid:2439f628-f86d-4770-98d1-ae7b99a4d91f,"stored 19, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_27,uuid:c803a008-7014-4a4e-a485-68e1d90d767c,"stored 19, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_29,uuid:938c15e5-c942-49aa-8e6d-9633189870ff,"stored 19, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_30,uuid:c17516f9-53dd-4fda-b4e6-e257068198b9,"stored 14, recomputed 20"
+S04,form's end-of-survey species count differs from recount,warning,survey,retained,SavMon_LW_Plot_46,uuid:dae71a1b-a6f9-4a6d-a7e5-8ffbb89fad6f,"stored 14, recomputed 20"
+S05,survey duration outside 30 to 180 minutes,warning,survey,retained,SavMon_LW_Plot_08,uuid:359a5da6-d237-4203-b838-8596bdbd4935,236 minutes for 20 quadrats
+S05,survey duration outside 30 to 180 minutes,warning,survey,rejected,SavMon_LW_Plot_18,uuid:81e3bc36-700f-465d-a1aa-48ebed04a78c,26 minutes for 20 quadrats
+S05,survey duration outside 30 to 180 minutes,warning,survey,rejected,SavMon_LW_Plot_21,uuid:c6cc7231-7af6-4bc5-b281-565c53f21763,25 minutes for 20 quadrats
+S06,"no active placeholders at start (first survey of the campaign, expected)",info,survey,retained,SavMon_LW_Plot_08,uuid:359a5da6-d237-4203-b838-8596bdbd4935,base_active_herb_count = 0
+P01,plot registered as not viable,info,plot,shared,SavMon_LW_Plot_23,SavMon_LW_Plot_23,reason given: 'On private property'
+P03,straight A-B distance outside 45-55 m,warning,plot,shared,SavMon_LW_Plot_16,SavMon_LW_Plot_16,A to B = 58.3 m
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_16,SavMon_LW_Plot_16|A to midpoint,A to midpoint = 33.1 m
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_16,SavMon_LW_Plot_16,bearing 100 deg; SOP allows rotation to avoid obstacles
+P03,straight A-B distance outside 45-55 m,warning,plot,shared,SavMon_LW_Plot_11,SavMon_LW_Plot_11,A to B = 42.5 m
+P04,recorded midpoint off the straight A-B line,info,plot,shared,SavMon_LW_Plot_11,SavMon_LW_Plot_11|midpoint,11.3 m perpendicular to A-B
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_11,SavMon_LW_Plot_11,bearing 108 deg; SOP allows rotation to avoid obstacles
+P03,straight A-B distance far from 50 m,error,plot,shared,SavMon_LW_Plot_29,SavMon_LW_Plot_29,A to B = 61.8 m
+P04,recorded midpoint off the straight A-B line,info,plot,shared,SavMon_LW_Plot_29,SavMon_LW_Plot_29|midpoint,5.8 m perpendicular to A-B
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_29,SavMon_LW_Plot_29,bearing 105 deg; SOP allows rotation to avoid obstacles
+P03,straight A-B distance outside 45-55 m,warning,plot,shared,SavMon_LW_Plot_21,SavMon_LW_Plot_21,A to B = 44.8 m
+P04,recorded midpoint off the straight A-B line,info,plot,shared,SavMon_LW_Plot_21,SavMon_LW_Plot_21|midpoint,5.0 m perpendicular to A-B
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_21,SavMon_LW_Plot_21,bearing 98 deg; SOP allows rotation to avoid obstacles
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_18,SavMon_LW_Plot_18,bearing 114 deg; SOP allows rotation to avoid obstacles
+P03,straight A-B distance outside 45-55 m,warning,plot,shared,SavMon_LW_Plot_25,SavMon_LW_Plot_25,A to B = 42.8 m
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_25,SavMon_LW_Plot_25,bearing 96 deg; SOP allows rotation to avoid obstacles
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_04,SavMon_LW_Plot_04,bearing 110 deg; SOP allows rotation to avoid obstacles
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_07,SavMon_LW_Plot_07|A to midpoint,A to midpoint = 33.8 m
+P04,recorded midpoint off the straight A-B line,info,plot,shared,SavMon_LW_Plot_07,SavMon_LW_Plot_07|midpoint,6.5 m perpendicular to A-B
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_07,SavMon_LW_Plot_07,bearing 85 deg; SOP allows rotation to avoid obstacles
+P02,midpoint 15-25 m from prescribed point (inside SOP limit),warning,plot,shared,SavMon_LW_Plot_15,SavMon_LW_Plot_15,15.2 m
+P03,straight A-B distance far from 50 m,error,plot,shared,SavMon_LW_Plot_15,SavMon_LW_Plot_15,A to B = 60.4 m
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_15,SavMon_LW_Plot_15|A to midpoint,A to midpoint = 46.5 m
+P04,recorded midpoint off the straight A-B line,info,plot,shared,SavMon_LW_Plot_15,SavMon_LW_Plot_15|midpoint,16.1 m perpendicular to A-B
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_15,SavMon_LW_Plot_15,bearing 96 deg; SOP allows rotation to avoid obstacles
+P04,recorded midpoint off the straight A-B line,info,plot,shared,SavMon_LW_Plot_20,SavMon_LW_Plot_20|midpoint,5.8 m perpendicular to A-B
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_20,SavMon_LW_Plot_20,bearing 105 deg; SOP allows rotation to avoid obstacles
+P04,recorded midpoint off the straight A-B line,info,plot,shared,SavMon_LW_Plot_24,SavMon_LW_Plot_24|midpoint,6.2 m perpendicular to A-B
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_24,SavMon_LW_Plot_24,bearing 93 deg; SOP allows rotation to avoid obstacles
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_02,SavMon_LW_Plot_02|midpoint to B,midpoint to B = 34.9 m
+P04,recorded midpoint off the straight A-B line,info,plot,shared,SavMon_LW_Plot_02,SavMon_LW_Plot_02|midpoint,15.1 m perpendicular to A-B
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_02,SavMon_LW_Plot_02,bearing 103 deg; SOP allows rotation to avoid obstacles
+P03,straight A-B distance outside 45-55 m,warning,plot,shared,SavMon_LW_Plot_28,SavMon_LW_Plot_28,A to B = 40.2 m
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_28,SavMon_LW_Plot_28|A to midpoint,A to midpoint = 15.3 m
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_28,SavMon_LW_Plot_28,bearing 118 deg; SOP allows rotation to avoid obstacles
+P03,straight A-B distance far from 50 m,error,plot,shared,SavMon_LW_Plot_01,SavMon_LW_Plot_01,A to B = 63.2 m
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_01,SavMon_LW_Plot_01|A to midpoint,A to midpoint = 32.8 m
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_01,SavMon_LW_Plot_01,bearing 131 deg; SOP allows rotation to avoid obstacles
+P03,straight A-B distance outside 45-55 m,warning,plot,shared,SavMon_LW_Plot_13,SavMon_LW_Plot_13,A to B = 56.1 m
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_13,SavMon_LW_Plot_13|A to midpoint,A to midpoint = 39.7 m
+P04,recorded midpoint off the straight A-B line,info,plot,shared,SavMon_LW_Plot_13,SavMon_LW_Plot_13|midpoint,10.5 m perpendicular to A-B
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_13,SavMon_LW_Plot_13,bearing 78 deg; SOP allows rotation to avoid obstacles
+P02,midpoint 15-25 m from prescribed point (inside SOP limit),warning,plot,shared,SavMon_LW_Plot_17,SavMon_LW_Plot_17,23.9 m
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_17,SavMon_LW_Plot_17|midpoint to B,midpoint to B = 33.3 m
+P04,recorded midpoint off the straight A-B line,info,plot,shared,SavMon_LW_Plot_17,SavMon_LW_Plot_17|midpoint,8.6 m perpendicular to A-B
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_17,SavMon_LW_Plot_17,bearing 82 deg; SOP allows rotation to avoid obstacles
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_06,SavMon_LW_Plot_06,bearing 106 deg; SOP allows rotation to avoid obstacles
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_46,SavMon_LW_Plot_46,bearing 102 deg; SOP allows rotation to avoid obstacles
+P03,straight A-B distance far from 50 m,error,plot,shared,SavMon_LW_Plot_19,SavMon_LW_Plot_19,A to B = 22.6 m
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_19,SavMon_LW_Plot_19|A to midpoint,A to midpoint = 14.9 m
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_19,SavMon_LW_Plot_19|midpoint to B,midpoint to B = 8.1 m
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_19,SavMon_LW_Plot_19,bearing 60 deg; SOP allows rotation to avoid obstacles
+P02,midpoint 15-25 m from prescribed point (inside SOP limit),warning,plot,shared,SavMon_LW_Plot_27,SavMon_LW_Plot_27,20.3 m
+P03,straight A-B distance far from 50 m,error,plot,shared,SavMon_LW_Plot_27,SavMon_LW_Plot_27,A to B = 28.6 m
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_27,SavMon_LW_Plot_27|midpoint to B,midpoint to B = 4.0 m
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_27,SavMon_LW_Plot_27,bearing 56 deg; SOP allows rotation to avoid obstacles
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_26,SavMon_LW_Plot_26,bearing 113 deg; SOP allows rotation to avoid obstacles
+P02,midpoint 15-25 m from prescribed point (inside SOP limit),warning,plot,shared,SavMon_LW_Plot_05,SavMon_LW_Plot_05,20.0 m
+P04,recorded midpoint off the straight A-B line,info,plot,shared,SavMon_LW_Plot_05,SavMon_LW_Plot_05|midpoint,5.5 m perpendicular to A-B
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_05,SavMon_LW_Plot_05,bearing 117 deg; SOP allows rotation to avoid obstacles
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_09,SavMon_LW_Plot_09,bearing 78 deg; SOP allows rotation to avoid obstacles
+P02,midpoint moved > 25 m from prescribed point (SOP limit),error,plot,shared,SavMon_LW_Plot_14,SavMon_LW_Plot_14,33.6 m
+P03,straight A-B distance outside 45-55 m,warning,plot,shared,SavMon_LW_Plot_14,SavMon_LW_Plot_14,A to B = 44.0 m
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_14,SavMon_LW_Plot_14|A to midpoint,A to midpoint = 10.8 m
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_14,SavMon_LW_Plot_14|midpoint to B,midpoint to B = 33.4 m
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_14,SavMon_LW_Plot_14,bearing 91 deg; SOP allows rotation to avoid obstacles
+P03,straight A-B distance outside 45-55 m,warning,plot,shared,SavMon_LW_Plot_10,SavMon_LW_Plot_10,A to B = 57.5 m
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_10,SavMon_LW_Plot_10,bearing 109 deg; SOP allows rotation to avoid obstacles
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_30,SavMon_LW_Plot_30|A to midpoint,A to midpoint = 40.5 m
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_30,SavMon_LW_Plot_30|midpoint to B,midpoint to B = 12.4 m
+P04,recorded midpoint off the straight A-B line,info,plot,shared,SavMon_LW_Plot_30,SavMon_LW_Plot_30|midpoint,5.9 m perpendicular to A-B
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_30,SavMon_LW_Plot_30,bearing 110 deg; SOP allows rotation to avoid obstacles
+P03,straight A-B distance outside 45-55 m,warning,plot,shared,SavMon_LW_Plot_03,SavMon_LW_Plot_03,A to B = 57.5 m
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_03,SavMon_LW_Plot_03|A to midpoint,A to midpoint = 37.0 m
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_03,SavMon_LW_Plot_03,bearing 107 deg; SOP allows rotation to avoid obstacles
+P02,midpoint 15-25 m from prescribed point (inside SOP limit),warning,plot,shared,SavMon_LW_Plot_22,SavMon_LW_Plot_22,17.8 m
+P03,straight A-B distance far from 50 m,error,plot,shared,SavMon_LW_Plot_22,SavMon_LW_Plot_22,A to B = 65.6 m
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_22,SavMon_LW_Plot_22|midpoint to B,midpoint to B = 47.4 m
+P04,recorded midpoint off the straight A-B line,info,plot,shared,SavMon_LW_Plot_22,SavMon_LW_Plot_22|midpoint,12.1 m perpendicular to A-B
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_22,SavMon_LW_Plot_22,bearing 50 deg; SOP allows rotation to avoid obstacles
+P03,straight A-B distance outside 45-55 m,warning,plot,shared,SavMon_LW_Plot_12,SavMon_LW_Plot_12,A to B = 41.9 m
+P04,endpoint not ~25 m from midpoint,warning,plot,shared,SavMon_LW_Plot_12,SavMon_LW_Plot_12|A to midpoint,A to midpoint = 11.4 m
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_12,SavMon_LW_Plot_12,bearing 123 deg; SOP allows rotation to avoid obstacles
+P04,recorded midpoint off the straight A-B line,info,plot,shared,SavMon_LW_Plot_08,SavMon_LW_Plot_08|midpoint,8.0 m perpendicular to A-B
+P05,transect not north-south; rotation reason not recorded,info,plot,shared,SavMon_LW_Plot_08,SavMon_LW_Plot_08,bearing 112 deg; SOP allows rotation to avoid obstacles
+P06,backup plot surveyed,info,plot,shared,SavMon_LW_Plot_46,SavMon_LW_Plot_46,the export does not record which primary it replaces
+P07,prescribed primary plots with no registration in these exports,error,design,shared,stratum: shrubland,shrubland,"6 of 6 primary plots in 'shrubland' (Plot_31, Plot_32, Plot_33, Plot_34, Plot_35, Plot_36)"
+Q02,quadrat off the registered transect,warning,quadrat,rejected,SavMon_LW_Plot_21,uuid:c6cc7231-7af6-4bc5-b281-565c53f21763/observations/quadrat_repeat[3],SavMon_LW_Plot_21 q3: 13 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,rejected,SavMon_LW_Plot_21,uuid:c6cc7231-7af6-4bc5-b281-565c53f21763/observations/quadrat_repeat[18],SavMon_LW_Plot_21 q18: 14 m from A-mid-B
+Q04,additional-species answer disagrees with rows,warning,quadrat,rejected,SavMon_LW_Plot_21,uuid:c6cc7231-7af6-4bc5-b281-565c53f21763/observations/quadrat_repeat[19],"SavMon_LW_Plot_21 q19: answer='yes', additional rows=0"
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_21,uuid:49d73df9-2d36-4a1e-aa29-6f94f23a7513/observations/quadrat_repeat[10],SavMon_LW_Plot_21 q10: 17 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_18,uuid:cf362fbc-991a-4db1-8d49-6c1d29fd49c8/observations/quadrat_repeat[19],SavMon_LW_Plot_18 q19: 11 m from A-mid-B
+Q02,quadrat far from registered transect,error,quadrat,retained,SavMon_LW_Plot_11,uuid:9e1251bb-84c1-4b7a-a8bb-bafcf7afc82c/observations/quadrat_repeat[4],SavMon_LW_Plot_11 q4: 32 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_11,uuid:9e1251bb-84c1-4b7a-a8bb-bafcf7afc82c/observations/quadrat_repeat[5],SavMon_LW_Plot_11 q5: 22 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_11,uuid:9e1251bb-84c1-4b7a-a8bb-bafcf7afc82c/observations/quadrat_repeat[6],SavMon_LW_Plot_11 q6: 19 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_11,uuid:9e1251bb-84c1-4b7a-a8bb-bafcf7afc82c/observations/quadrat_repeat[8],SavMon_LW_Plot_11 q8: 11 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,rejected,SavMon_LW_Plot_18,uuid:81e3bc36-700f-465d-a1aa-48ebed04a78c/observations/quadrat_repeat[14],SavMon_LW_Plot_18 q14: 10 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,rejected,SavMon_LW_Plot_18,uuid:81e3bc36-700f-465d-a1aa-48ebed04a78c/observations/quadrat_repeat[17],SavMon_LW_Plot_18 q17: 10 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,rejected,SavMon_LW_Plot_18,uuid:81e3bc36-700f-465d-a1aa-48ebed04a78c/observations/quadrat_repeat[19],SavMon_LW_Plot_18 q19: 16 m from A-mid-B
+Q04,additional-species answer disagrees with rows,warning,quadrat,retained,SavMon_LW_Plot_29,uuid:938c15e5-c942-49aa-8e6d-9633189870ff/observations/quadrat_repeat[2],"SavMon_LW_Plot_29 q2: answer='yes', additional rows=0"
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_29,uuid:938c15e5-c942-49aa-8e6d-9633189870ff/observations/quadrat_repeat[6],SavMon_LW_Plot_29 q6: 11 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_29,uuid:938c15e5-c942-49aa-8e6d-9633189870ff/observations/quadrat_repeat[12],SavMon_LW_Plot_29 q12: 10 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_29,uuid:938c15e5-c942-49aa-8e6d-9633189870ff/observations/quadrat_repeat[13],SavMon_LW_Plot_29 q13: 14 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_29,uuid:938c15e5-c942-49aa-8e6d-9633189870ff/observations/quadrat_repeat[17],SavMon_LW_Plot_29 q17: 18 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_29,uuid:938c15e5-c942-49aa-8e6d-9633189870ff/observations/quadrat_repeat[18],SavMon_LW_Plot_29 q18: 10 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_25,uuid:8e5f5c9d-d697-4358-b766-db4a41f28c3e/observations/quadrat_repeat[1],SavMon_LW_Plot_25 q1: 18 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_25,uuid:8e5f5c9d-d697-4358-b766-db4a41f28c3e/observations/quadrat_repeat[13],SavMon_LW_Plot_25 q13: 16 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_25,uuid:8e5f5c9d-d697-4358-b766-db4a41f28c3e/observations/quadrat_repeat[14],SavMon_LW_Plot_25 q14: 11 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_04,uuid:4137458f-31e5-4355-b4ad-47858fb11503/observations/quadrat_repeat[1],SavMon_LW_Plot_04 q1: 14 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_04,uuid:4137458f-31e5-4355-b4ad-47858fb11503/observations/quadrat_repeat[3],SavMon_LW_Plot_04 q3: 20 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_04,uuid:4137458f-31e5-4355-b4ad-47858fb11503/observations/quadrat_repeat[5],SavMon_LW_Plot_04 q5: 15 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_04,uuid:4137458f-31e5-4355-b4ad-47858fb11503/observations/quadrat_repeat[6],SavMon_LW_Plot_04 q6: 14 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_04,uuid:4137458f-31e5-4355-b4ad-47858fb11503/observations/quadrat_repeat[7],SavMon_LW_Plot_04 q7: 15 m from A-mid-B
+Q03,no herbaceous species in quadrat,info,quadrat,retained,SavMon_LW_Plot_04,uuid:4137458f-31e5-4355-b4ad-47858fb11503/observations/quadrat_repeat[17],SavMon_LW_Plot_04 q17
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_07,uuid:430e85a3-44ce-45f4-9974-c6a61569e78b/observations/quadrat_repeat[1],SavMon_LW_Plot_07 q1: 17 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_07,uuid:430e85a3-44ce-45f4-9974-c6a61569e78b/observations/quadrat_repeat[2],SavMon_LW_Plot_07 q2: 15 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_07,uuid:430e85a3-44ce-45f4-9974-c6a61569e78b/observations/quadrat_repeat[3],SavMon_LW_Plot_07 q3: 10 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_07,uuid:430e85a3-44ce-45f4-9974-c6a61569e78b/observations/quadrat_repeat[10],SavMon_LW_Plot_07 q10: 11 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_07,uuid:430e85a3-44ce-45f4-9974-c6a61569e78b/observations/quadrat_repeat[19],SavMon_LW_Plot_07 q19: 11 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_07,uuid:430e85a3-44ce-45f4-9974-c6a61569e78b/observations/quadrat_repeat[20],SavMon_LW_Plot_07 q20: 11 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_15,uuid:54452130-d92e-4996-a0d7-9401811b9ed7/observations/quadrat_repeat[10],SavMon_LW_Plot_15 q10: 12 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_15,uuid:54452130-d92e-4996-a0d7-9401811b9ed7/observations/quadrat_repeat[11],SavMon_LW_Plot_15 q11: 14 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_15,uuid:54452130-d92e-4996-a0d7-9401811b9ed7/observations/quadrat_repeat[16],SavMon_LW_Plot_15 q16: 14 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_15,uuid:54452130-d92e-4996-a0d7-9401811b9ed7/observations/quadrat_repeat[17],SavMon_LW_Plot_15 q17: 11 m from A-mid-B
+Q04,additional-species answer disagrees with rows,warning,quadrat,retained,SavMon_LW_Plot_15,uuid:54452130-d92e-4996-a0d7-9401811b9ed7/observations/quadrat_repeat[17],"SavMon_LW_Plot_15 q17: answer='yes', additional rows=0"
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_15,uuid:54452130-d92e-4996-a0d7-9401811b9ed7/observations/quadrat_repeat[18],SavMon_LW_Plot_15 q18: 15 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_20,uuid:b816a9b4-f338-432a-83d7-1cf354583f0f/observations/quadrat_repeat[11],SavMon_LW_Plot_20 q11: 10 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_02,uuid:e63b6ad6-7893-4cca-a1db-00fbde18a2aa/observations/quadrat_repeat[3],SavMon_LW_Plot_02 q3: 14 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_02,uuid:e63b6ad6-7893-4cca-a1db-00fbde18a2aa/observations/quadrat_repeat[4],SavMon_LW_Plot_02 q4: 12 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_02,uuid:e63b6ad6-7893-4cca-a1db-00fbde18a2aa/observations/quadrat_repeat[5],SavMon_LW_Plot_02 q5: 13 m from A-mid-B
+Q03,no herbaceous species in quadrat,info,quadrat,retained,SavMon_LW_Plot_02,uuid:e63b6ad6-7893-4cca-a1db-00fbde18a2aa/observations/quadrat_repeat[19],SavMon_LW_Plot_02 q19
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_28,uuid:c4ea3469-7e1c-474a-9ce6-fc1926e590e2/observations/quadrat_repeat[1],SavMon_LW_Plot_28 q1: 10 m from A-mid-B
+Q03,no herbaceous species in quadrat,info,quadrat,retained,SavMon_LW_Plot_28,uuid:c4ea3469-7e1c-474a-9ce6-fc1926e590e2/observations/quadrat_repeat[17],SavMon_LW_Plot_28 q17
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_01,uuid:9fd08bb2-7c3f-49f5-8ad8-dd6f45da94da/observations/quadrat_repeat[1],SavMon_LW_Plot_01 q1: 12 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_01,uuid:9fd08bb2-7c3f-49f5-8ad8-dd6f45da94da/observations/quadrat_repeat[2],SavMon_LW_Plot_01 q2: 22 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_01,uuid:9fd08bb2-7c3f-49f5-8ad8-dd6f45da94da/observations/quadrat_repeat[3],SavMon_LW_Plot_01 q3: 11 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_01,uuid:9fd08bb2-7c3f-49f5-8ad8-dd6f45da94da/observations/quadrat_repeat[4],SavMon_LW_Plot_01 q4: 10 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_01,uuid:9fd08bb2-7c3f-49f5-8ad8-dd6f45da94da/observations/quadrat_repeat[5],SavMon_LW_Plot_01 q5: 13 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_01,uuid:9fd08bb2-7c3f-49f5-8ad8-dd6f45da94da/observations/quadrat_repeat[9],SavMon_LW_Plot_01 q9: 12 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_01,uuid:9fd08bb2-7c3f-49f5-8ad8-dd6f45da94da/observations/quadrat_repeat[13],SavMon_LW_Plot_01 q13: 12 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_01,uuid:9fd08bb2-7c3f-49f5-8ad8-dd6f45da94da/observations/quadrat_repeat[15],SavMon_LW_Plot_01 q15: 12 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_01,uuid:9fd08bb2-7c3f-49f5-8ad8-dd6f45da94da/observations/quadrat_repeat[16],SavMon_LW_Plot_01 q16: 13 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_01,uuid:9fd08bb2-7c3f-49f5-8ad8-dd6f45da94da/observations/quadrat_repeat[17],SavMon_LW_Plot_01 q17: 15 m from A-mid-B
+Q02,quadrat far from registered transect,error,quadrat,retained,SavMon_LW_Plot_01,uuid:9fd08bb2-7c3f-49f5-8ad8-dd6f45da94da/observations/quadrat_repeat[18],SavMon_LW_Plot_01 q18: 44 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_01,uuid:9fd08bb2-7c3f-49f5-8ad8-dd6f45da94da/observations/quadrat_repeat[19],SavMon_LW_Plot_01 q19: 13 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_13,uuid:ebe93f04-c927-4af3-9668-21b6540c01ea/observations/quadrat_repeat[1],SavMon_LW_Plot_13 q1: 14 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_13,uuid:ebe93f04-c927-4af3-9668-21b6540c01ea/observations/quadrat_repeat[2],SavMon_LW_Plot_13 q2: 18 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_13,uuid:ebe93f04-c927-4af3-9668-21b6540c01ea/observations/quadrat_repeat[19],SavMon_LW_Plot_13 q19: 11 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_13,uuid:ebe93f04-c927-4af3-9668-21b6540c01ea/observations/quadrat_repeat[20],SavMon_LW_Plot_13 q20: 14 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_17,uuid:b940a5e4-f4ed-4120-ba4e-70f858b86dfd/observations/quadrat_repeat[15],SavMon_LW_Plot_17 q15: 11 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_17,uuid:b940a5e4-f4ed-4120-ba4e-70f858b86dfd/observations/quadrat_repeat[17],SavMon_LW_Plot_17 q17: 12 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_06,uuid:7ae61d55-3663-422e-aad2-9104b56c9a47/observations/quadrat_repeat[1],SavMon_LW_Plot_06 q1: 10 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_06,uuid:7ae61d55-3663-422e-aad2-9104b56c9a47/observations/quadrat_repeat[3],SavMon_LW_Plot_06 q3: 14 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_06,uuid:7ae61d55-3663-422e-aad2-9104b56c9a47/observations/quadrat_repeat[5],SavMon_LW_Plot_06 q5: 11 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_06,uuid:7ae61d55-3663-422e-aad2-9104b56c9a47/observations/quadrat_repeat[7],SavMon_LW_Plot_06 q7: 16 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_06,uuid:7ae61d55-3663-422e-aad2-9104b56c9a47/observations/quadrat_repeat[8],SavMon_LW_Plot_06 q8: 17 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_06,uuid:7ae61d55-3663-422e-aad2-9104b56c9a47/observations/quadrat_repeat[9],SavMon_LW_Plot_06 q9: 24 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_06,uuid:7ae61d55-3663-422e-aad2-9104b56c9a47/observations/quadrat_repeat[12],SavMon_LW_Plot_06 q12: 11 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_06,uuid:7ae61d55-3663-422e-aad2-9104b56c9a47/observations/quadrat_repeat[20],SavMon_LW_Plot_06 q20: 14 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_46,uuid:dae71a1b-a6f9-4a6d-a7e5-8ffbb89fad6f/observations/quadrat_repeat[1],SavMon_LW_Plot_46 q1: 10 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_46,uuid:dae71a1b-a6f9-4a6d-a7e5-8ffbb89fad6f/observations/quadrat_repeat[2],SavMon_LW_Plot_46 q2: 14 m from A-mid-B
+Q04,additional-species answer disagrees with rows,warning,quadrat,retained,SavMon_LW_Plot_46,uuid:dae71a1b-a6f9-4a6d-a7e5-8ffbb89fad6f/observations/quadrat_repeat[5],"SavMon_LW_Plot_46 q5: answer='yes', additional rows=0"
+Q04,additional-species answer disagrees with rows,warning,quadrat,retained,SavMon_LW_Plot_46,uuid:dae71a1b-a6f9-4a6d-a7e5-8ffbb89fad6f/observations/quadrat_repeat[13],"SavMon_LW_Plot_46 q13: answer='yes', additional rows=0"
+Q04,additional-species answer disagrees with rows,warning,quadrat,retained,SavMon_LW_Plot_46,uuid:dae71a1b-a6f9-4a6d-a7e5-8ffbb89fad6f/observations/quadrat_repeat[14],"SavMon_LW_Plot_46 q14: answer='yes', additional rows=0"
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_19,uuid:9ec95900-d4e8-4825-be75-07834b98cc6c/observations/quadrat_repeat[1],SavMon_LW_Plot_19 q1: 18 m from A-mid-B
+Q02,quadrat far from registered transect,error,quadrat,retained,SavMon_LW_Plot_19,uuid:9ec95900-d4e8-4825-be75-07834b98cc6c/observations/quadrat_repeat[3],SavMon_LW_Plot_19 q3: 33 m from A-mid-B
+Q02,quadrat far from registered transect,error,quadrat,retained,SavMon_LW_Plot_19,uuid:9ec95900-d4e8-4825-be75-07834b98cc6c/observations/quadrat_repeat[7],SavMon_LW_Plot_19 q7: 26 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_19,uuid:9ec95900-d4e8-4825-be75-07834b98cc6c/observations/quadrat_repeat[9],SavMon_LW_Plot_19 q9: 18 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_19,uuid:9ec95900-d4e8-4825-be75-07834b98cc6c/observations/quadrat_repeat[10],SavMon_LW_Plot_19 q10: 15 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_19,uuid:9ec95900-d4e8-4825-be75-07834b98cc6c/observations/quadrat_repeat[11],SavMon_LW_Plot_19 q11: 13 m from A-mid-B
+Q02,quadrat far from registered transect,error,quadrat,retained,SavMon_LW_Plot_19,uuid:9ec95900-d4e8-4825-be75-07834b98cc6c/observations/quadrat_repeat[12],SavMon_LW_Plot_19 q12: 26 m from A-mid-B
+Q03,no herbaceous species in quadrat,info,quadrat,retained,SavMon_LW_Plot_19,uuid:9ec95900-d4e8-4825-be75-07834b98cc6c/observations/quadrat_repeat[12],SavMon_LW_Plot_19 q12
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_19,uuid:9ec95900-d4e8-4825-be75-07834b98cc6c/observations/quadrat_repeat[14],SavMon_LW_Plot_19 q14: 10 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_19,uuid:9ec95900-d4e8-4825-be75-07834b98cc6c/observations/quadrat_repeat[19],SavMon_LW_Plot_19 q19: 11 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_19,uuid:9ec95900-d4e8-4825-be75-07834b98cc6c/observations/quadrat_repeat[20],SavMon_LW_Plot_19 q20: 13 m from A-mid-B
+Q04,additional-species answer disagrees with rows,warning,quadrat,retained,SavMon_LW_Plot_19,uuid:9ec95900-d4e8-4825-be75-07834b98cc6c/observations/quadrat_repeat[20],"SavMon_LW_Plot_19 q20: answer='yes', additional rows=0"
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_27,uuid:c803a008-7014-4a4e-a485-68e1d90d767c/observations/quadrat_repeat[5],SavMon_LW_Plot_27 q5: 19 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_27,uuid:c803a008-7014-4a4e-a485-68e1d90d767c/observations/quadrat_repeat[6],SavMon_LW_Plot_27 q6: 15 m from A-mid-B
+Q02,quadrat far from registered transect,error,quadrat,retained,SavMon_LW_Plot_27,uuid:c803a008-7014-4a4e-a485-68e1d90d767c/observations/quadrat_repeat[8],SavMon_LW_Plot_27 q8: 27 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_27,uuid:c803a008-7014-4a4e-a485-68e1d90d767c/observations/quadrat_repeat[9],SavMon_LW_Plot_27 q9: 25 m from A-mid-B
+Q02,quadrat far from registered transect,error,quadrat,retained,SavMon_LW_Plot_27,uuid:c803a008-7014-4a4e-a485-68e1d90d767c/observations/quadrat_repeat[10],SavMon_LW_Plot_27 q10: 27 m from A-mid-B
+Q02,quadrat far from registered transect,error,quadrat,retained,SavMon_LW_Plot_27,uuid:c803a008-7014-4a4e-a485-68e1d90d767c/observations/quadrat_repeat[11],SavMon_LW_Plot_27 q11: 26 m from A-mid-B
+Q02,quadrat far from registered transect,error,quadrat,retained,SavMon_LW_Plot_27,uuid:c803a008-7014-4a4e-a485-68e1d90d767c/observations/quadrat_repeat[12],SavMon_LW_Plot_27 q12: 27 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_27,uuid:c803a008-7014-4a4e-a485-68e1d90d767c/observations/quadrat_repeat[13],SavMon_LW_Plot_27 q13: 22 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_27,uuid:c803a008-7014-4a4e-a485-68e1d90d767c/observations/quadrat_repeat[14],SavMon_LW_Plot_27 q14: 16 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_27,uuid:c803a008-7014-4a4e-a485-68e1d90d767c/observations/quadrat_repeat[15],SavMon_LW_Plot_27 q15: 19 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_27,uuid:c803a008-7014-4a4e-a485-68e1d90d767c/observations/quadrat_repeat[16],SavMon_LW_Plot_27 q16: 15 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_27,uuid:c803a008-7014-4a4e-a485-68e1d90d767c/observations/quadrat_repeat[17],SavMon_LW_Plot_27 q17: 13 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_27,uuid:c803a008-7014-4a4e-a485-68e1d90d767c/observations/quadrat_repeat[18],SavMon_LW_Plot_27 q18: 13 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_26,uuid:2439f628-f86d-4770-98d1-ae7b99a4d91f/observations/quadrat_repeat[10],SavMon_LW_Plot_26 q10: 12 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_26,uuid:2439f628-f86d-4770-98d1-ae7b99a4d91f/observations/quadrat_repeat[19],SavMon_LW_Plot_26 q19: 14 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_26,uuid:2439f628-f86d-4770-98d1-ae7b99a4d91f/observations/quadrat_repeat[20],SavMon_LW_Plot_26 q20: 13 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[1],SavMon_LW_Plot_05 q1: 22 m from A-mid-B
+Q02,quadrat far from registered transect,error,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[2],SavMon_LW_Plot_05 q2: 25 m from A-mid-B
+Q02,quadrat far from registered transect,error,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[3],SavMon_LW_Plot_05 q3: 27 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[4],SavMon_LW_Plot_05 q4: 25 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[5],SavMon_LW_Plot_05 q5: 16 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[6],SavMon_LW_Plot_05 q6: 17 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[7],SavMon_LW_Plot_05 q7: 19 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[8],SavMon_LW_Plot_05 q8: 20 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[9],SavMon_LW_Plot_05 q9: 18 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[10],SavMon_LW_Plot_05 q10: 24 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[11],SavMon_LW_Plot_05 q11: 18 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[12],SavMon_LW_Plot_05 q12: 19 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[13],SavMon_LW_Plot_05 q13: 17 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[14],SavMon_LW_Plot_05 q14: 15 m from A-mid-B
+Q03,no herbaceous species in quadrat,info,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[14],SavMon_LW_Plot_05 q14
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[15],SavMon_LW_Plot_05 q15: 16 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[17],SavMon_LW_Plot_05 q17: 13 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[18],SavMon_LW_Plot_05 q18: 13 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[19],SavMon_LW_Plot_05 q19: 14 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_05,uuid:5d242bf2-8888-4eb0-9082-431482177425/observations/quadrat_repeat[20],SavMon_LW_Plot_05 q20: 20 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_09,uuid:95cde0b4-8b49-4f5d-a3c7-6765e1c06466/observations/quadrat_repeat[10],SavMon_LW_Plot_09 q10: 22 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_09,uuid:95cde0b4-8b49-4f5d-a3c7-6765e1c06466/observations/quadrat_repeat[14],SavMon_LW_Plot_09 q14: 16 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_14,uuid:fdf5f121-0a7f-4769-85bb-4717e0361eb4/observations/quadrat_repeat[1],SavMon_LW_Plot_14 q1: 13 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_14,uuid:fdf5f121-0a7f-4769-85bb-4717e0361eb4/observations/quadrat_repeat[3],SavMon_LW_Plot_14 q3: 12 m from A-mid-B
+Q04,additional-species answer disagrees with rows,warning,quadrat,retained,SavMon_LW_Plot_14,uuid:fdf5f121-0a7f-4769-85bb-4717e0361eb4/observations/quadrat_repeat[8],"SavMon_LW_Plot_14 q8: answer='yes', additional rows=0"
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_14,uuid:fdf5f121-0a7f-4769-85bb-4717e0361eb4/observations/quadrat_repeat[10],SavMon_LW_Plot_14 q10: 21 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_14,uuid:fdf5f121-0a7f-4769-85bb-4717e0361eb4/observations/quadrat_repeat[11],SavMon_LW_Plot_14 q11: 17 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_14,uuid:fdf5f121-0a7f-4769-85bb-4717e0361eb4/observations/quadrat_repeat[14],SavMon_LW_Plot_14 q14: 14 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_14,uuid:fdf5f121-0a7f-4769-85bb-4717e0361eb4/observations/quadrat_repeat[19],SavMon_LW_Plot_14 q19: 14 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_14,uuid:fdf5f121-0a7f-4769-85bb-4717e0361eb4/observations/quadrat_repeat[20],SavMon_LW_Plot_14 q20: 17 m from A-mid-B
+Q04,additional-species answer disagrees with rows,warning,quadrat,retained,SavMon_LW_Plot_10,uuid:3865525f-1d45-40fc-83ca-7e30fafe6b54/observations/quadrat_repeat[9],"SavMon_LW_Plot_10 q9: answer='yes', additional rows=0"
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_10,uuid:3865525f-1d45-40fc-83ca-7e30fafe6b54/observations/quadrat_repeat[17],SavMon_LW_Plot_10 q17: 16 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_10,uuid:3865525f-1d45-40fc-83ca-7e30fafe6b54/observations/quadrat_repeat[19],SavMon_LW_Plot_10 q19: 11 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_10,uuid:3865525f-1d45-40fc-83ca-7e30fafe6b54/observations/quadrat_repeat[20],SavMon_LW_Plot_10 q20: 12 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_30,uuid:c17516f9-53dd-4fda-b4e6-e257068198b9/observations/quadrat_repeat[3],SavMon_LW_Plot_30 q3: 13 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_30,uuid:c17516f9-53dd-4fda-b4e6-e257068198b9/observations/quadrat_repeat[5],SavMon_LW_Plot_30 q5: 13 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_30,uuid:c17516f9-53dd-4fda-b4e6-e257068198b9/observations/quadrat_repeat[6],SavMon_LW_Plot_30 q6: 11 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_30,uuid:c17516f9-53dd-4fda-b4e6-e257068198b9/observations/quadrat_repeat[8],SavMon_LW_Plot_30 q8: 10 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_30,uuid:c17516f9-53dd-4fda-b4e6-e257068198b9/observations/quadrat_repeat[12],SavMon_LW_Plot_30 q12: 12 m from A-mid-B
+Q04,additional-species answer disagrees with rows,warning,quadrat,retained,SavMon_LW_Plot_30,uuid:c17516f9-53dd-4fda-b4e6-e257068198b9/observations/quadrat_repeat[14],"SavMon_LW_Plot_30 q14: answer='yes', additional rows=0"
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_30,uuid:c17516f9-53dd-4fda-b4e6-e257068198b9/observations/quadrat_repeat[17],SavMon_LW_Plot_30 q17: 11 m from A-mid-B
+Q02,quadrat far from registered transect,error,quadrat,retained,SavMon_LW_Plot_30,uuid:c17516f9-53dd-4fda-b4e6-e257068198b9/observations/quadrat_repeat[20],SavMon_LW_Plot_30 q20: 37 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_03,uuid:967cb42c-f21a-4ba6-92be-81cd6d2b0e8d/observations/quadrat_repeat[1],SavMon_LW_Plot_03 q1: 16 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_03,uuid:967cb42c-f21a-4ba6-92be-81cd6d2b0e8d/observations/quadrat_repeat[5],SavMon_LW_Plot_03 q5: 13 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_03,uuid:967cb42c-f21a-4ba6-92be-81cd6d2b0e8d/observations/quadrat_repeat[12],SavMon_LW_Plot_03 q12: 12 m from A-mid-B
+Q03,no herbaceous species in quadrat,info,quadrat,retained,SavMon_LW_Plot_03,uuid:967cb42c-f21a-4ba6-92be-81cd6d2b0e8d/observations/quadrat_repeat[13],SavMon_LW_Plot_03 q13
+Q03,no herbaceous species in quadrat,info,quadrat,retained,SavMon_LW_Plot_03,uuid:967cb42c-f21a-4ba6-92be-81cd6d2b0e8d/observations/quadrat_repeat[20],SavMon_LW_Plot_03 q20
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_22,uuid:ce4f999d-8849-42a9-a870-1205d47b1903/observations/quadrat_repeat[4],SavMon_LW_Plot_22 q4: 12 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_22,uuid:ce4f999d-8849-42a9-a870-1205d47b1903/observations/quadrat_repeat[6],SavMon_LW_Plot_22 q6: 12 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_22,uuid:ce4f999d-8849-42a9-a870-1205d47b1903/observations/quadrat_repeat[8],SavMon_LW_Plot_22 q8: 17 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_22,uuid:ce4f999d-8849-42a9-a870-1205d47b1903/observations/quadrat_repeat[9],SavMon_LW_Plot_22 q9: 14 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_22,uuid:ce4f999d-8849-42a9-a870-1205d47b1903/observations/quadrat_repeat[15],SavMon_LW_Plot_22 q15: 10 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_12,uuid:e7de35f0-a715-47f1-885f-fd5a0d9a2907/observations/quadrat_repeat[7],SavMon_LW_Plot_12 q7: 15 m from A-mid-B
+Q02,quadrat far from registered transect,error,quadrat,retained,SavMon_LW_Plot_12,uuid:e7de35f0-a715-47f1-885f-fd5a0d9a2907/observations/quadrat_repeat[20],SavMon_LW_Plot_12 q20: 25 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_08,uuid:359a5da6-d237-4203-b838-8596bdbd4935/observations/quadrat_repeat[12],SavMon_LW_Plot_08 q12: 17 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_08,uuid:359a5da6-d237-4203-b838-8596bdbd4935/observations/quadrat_repeat[13],SavMon_LW_Plot_08 q13: 23 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_08,uuid:359a5da6-d237-4203-b838-8596bdbd4935/observations/quadrat_repeat[14],SavMon_LW_Plot_08 q14: 20 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_08,uuid:359a5da6-d237-4203-b838-8596bdbd4935/observations/quadrat_repeat[15],SavMon_LW_Plot_08 q15: 20 m from A-mid-B
+Q02,quadrat off the registered transect,warning,quadrat,retained,SavMon_LW_Plot_08,uuid:359a5da6-d237-4203-b838-8596bdbd4935/observations/quadrat_repeat[20],SavMon_LW_Plot_08 q20: 12 m from A-mid-B
+Q05,same species identity entered twice in a quadrat,warning,quadrat,rejected,SavMon_LW_Plot_18,uuid:81e3bc36-700f-465d-a1aa-48ebed04a78c/observations/quadrat_repeat[15],SavMon_LW_Plot_18 q15: 'herb_017' x2
+Q05,same species identity entered twice in a quadrat,warning,quadrat,retained,SavMon_LW_Plot_11,uuid:9e1251bb-84c1-4b7a-a8bb-bafcf7afc82c/observations/quadrat_repeat[2],SavMon_LW_Plot_11 q2: 'herb_054' x2
+Q05,same species identity entered twice in a quadrat,warning,quadrat,retained,SavMon_LW_Plot_22,uuid:ce4f999d-8849-42a9-a870-1205d47b1903/observations/quadrat_repeat[14],SavMon_LW_Plot_22 q14: 'Macrotalyma daltonii' x2
+Q05,same species identity entered twice in a quadrat,warning,quadrat,retained,SavMon_LW_Plot_18,uuid:cf362fbc-991a-4db1-8d49-6c1d29fd49c8/observations/quadrat_repeat[2],SavMon_LW_Plot_18 q2: 'Oldenladia corymbosa' x2
+Q05,same species identity entered twice in a quadrat,warning,quadrat,retained,SavMon_LW_Plot_12,uuid:e7de35f0-a715-47f1-885f-fd5a0d9a2907/observations/quadrat_repeat[20],SavMon_LW_Plot_12 q20: 'herb_016' x2
+Q05,same species identity entered twice in a quadrat,warning,quadrat,retained,SavMon_LW_Plot_12,uuid:e7de35f0-a715-47f1-885f-fd5a0d9a2907/observations/quadrat_repeat[2],SavMon_LW_Plot_12 q2: 'herb_010' x2
+Q05,same species identity entered twice in a quadrat,warning,quadrat,retained,SavMon_LW_Plot_12,uuid:e7de35f0-a715-47f1-885f-fd5a0d9a2907/observations/quadrat_repeat[4],SavMon_LW_Plot_12 q4: 'herb_017' x2
+Q07,additional-species row with no species chosen,warning,quadrat,retained,SavMon_LW_Plot_28,uuid:c4ea3469-7e1c-474a-9ce6-fc1926e590e2/observations/quadrat_repeat[6]/additional_species_repeat[5],SavMon_LW_Plot_28 q6: entry mode 'reuse_missing' but nothing selected
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_16,Justicia divaricata ,"'Justicia divaricata ' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_21,Cyperus margaritaceus,"'Cyperus margaritaceus' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_25,Zornia glochidiala,"'Zornia glochidiala' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_25,Commelina africana,"'Commelina africana' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_15,Ipomea leucanthemum,"'Ipomea leucanthemum' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_02,Brachiara dura,"'Brachiara dura' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_02,Xenostegia pinnata,"'Xenostegia pinnata' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_01,Polygala erioptera,"'Polygala erioptera' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_06,Chamaecrista absus,"'Chamaecrista absus' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_06,Setaria pumila,"'Setaria pumila' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_06,Pavonia clathrata,"'Pavonia clathrata' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_46,Cenchrus bifloris,"'Cenchrus bifloris' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_19,Indigofera filipes,"'Indigofera filipes' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_19,Hermbstaedtia linearis,"'Hermbstaedtia linearis' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_26,Aristida scabrivalvis,"'Aristida scabrivalvis' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_26,Asparagus africanus,"'Asparagus africanus' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_05,Sida chrysantha,"'Sida chrysantha' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_05,Ipomea sinensis,"'Ipomea sinensis' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_05,Gisekia pharnaceoides,"'Gisekia pharnaceoides' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_09,Erlangea misera,"'Erlangea misera' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_09,Justicia divaricata,"'Justicia divaricata' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_09,Citrullus naudinianus,"'Citrullus naudinianus' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_09,Abitulum ramosum,"'Abitulum ramosum' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_14,Pechuel-loeschea leubnitziae,"'Pechuel-loeschea leubnitziae' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X02,typed name already on the project species list,warning,species,shared,SavMon_LW_Plot_14,Pechuel-loeschea leubnitziae,"'Pechuel-loeschea leubnitziae' exists in species.csv; should have been selected, not typed"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_10,Thunbergia reticulata,"'Thunbergia reticulata' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_10,Hibiscus sidiformis,"'Hibiscus sidiformis' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_10,Boerhavia coccinea,"'Boerhavia coccinea' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_30,Striga gesnerioides,"'Striga gesnerioides' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_30,Senna obtusifolia,"'Senna obtusifolia' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_30,Panicum hirtum,"'Panicum hirtum' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_03,Pogonarthria fleckii,"'Pogonarthria fleckii' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_22,Rhynchosia minima,"'Rhynchosia minima' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_12,Crotolaria heidmannii,"'Crotolaria heidmannii' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_12,Oldenladia corymbosa,"'Oldenladia corymbosa' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_12,Phyllanthus pantandrus,"'Phyllanthus pantandrus' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_12,Macrotalyma daltonii,"'Macrotalyma daltonii' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_12,Jacquemontia tannifolia,"'Jacquemontia tannifolia' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_08,Evolvulus alsinoides ,"'Evolvulus alsinoides ' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_08,Alectra orobanchoides,"'Alectra orobanchoides' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_08,Tephrosia purpurea,"'Tephrosia purpurea' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_08,Crotolaria sphaerocarpa,"'Crotolaria sphaerocarpa' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_08,Xenostegia tridentata,"'Xenostegia tridentata' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X01,typed name not in Genus_species format,warning,species,shared,SavMon_LW_Plot_08,Rhynchosia totta,"'Rhynchosia totta' (SOP asks for Genus_species; the form's hint shows a space and only blocks , ; ( ))"
+X03,typed name not an exact GBIF match,info,species,shared,,Abitulum ramosum,"'Abitulum ramosum': GBIF HIGHERRANK, suggests 'Plantae'; a suggestion to review, not an identification"
+X03,typed name not an exact GBIF match,warning,species,shared,,Brachiara dura,"'Brachiara dura': GBIF FUZZY, suggests 'Brachiaria dura'; a suggestion to review, not an identification"
+X03,typed name not an exact GBIF match,warning,species,shared,,Cenchrus bifloris,"'Cenchrus bifloris': GBIF FUZZY, suggests 'Cenchrus biflorus'; a suggestion to review, not an identification"
+X03,typed name not an exact GBIF match,warning,species,shared,,Crotolaria heidmannii,"'Crotolaria heidmannii': GBIF FUZZY, suggests 'Crotalaria heidmannii'; a suggestion to review, not an identification"
+X03,typed name not an exact GBIF match,warning,species,shared,,Crotolaria sphaerocarpa,"'Crotolaria sphaerocarpa': GBIF FUZZY, suggests 'Crotalaria sphaerocarpa'; a suggestion to review, not an identification"
+X03,typed name not an exact GBIF match,warning,species,shared,,Ipomea leucanthemum,"'Ipomea leucanthemum': GBIF FUZZY, suggests 'Ipomoea leucanthemum'; a suggestion to review, not an identification"
+X03,typed name not an exact GBIF match,warning,species,shared,,Ipomea sinensis,"'Ipomea sinensis': GBIF FUZZY, suggests 'Ipomoea sinensis'; a suggestion to review, not an identification"
+X03,typed name not an exact GBIF match,info,species,shared,,Jacquemontia tannifolia,"'Jacquemontia tannifolia': GBIF HIGHERRANK, suggests 'Jacquemontia'; a suggestion to review, not an identification"
+X03,typed name not an exact GBIF match,info,species,shared,,Justicia divaricata,"'Justicia divaricata': GBIF HIGHERRANK, suggests 'Acanthaceae'; a suggestion to review, not an identification"
+X03,typed name not an exact GBIF match,warning,species,shared,,Macrotalyma daltonii,"'Macrotalyma daltonii': GBIF FUZZY, suggests 'Macrotyloma daltonii'; a suggestion to review, not an identification"
+X03,typed name not an exact GBIF match,warning,species,shared,,Oldenladia corymbosa,"'Oldenladia corymbosa': GBIF FUZZY, suggests 'Oldenlandia corymbosa'; a suggestion to review, not an identification"
+X03,typed name not an exact GBIF match,warning,species,shared,,Phyllanthus pantandrus,"'Phyllanthus pantandrus': GBIF FUZZY, suggests 'Phyllanthus pentandrus'; a suggestion to review, not an identification"
+X03,typed name not an exact GBIF match,warning,species,shared,,Zornia glochidiala,"'Zornia glochidiala': GBIF FUZZY, suggests 'Zornia glochidiata'; a suggestion to review, not an identification"
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:00c8fa8b-1dde-42c9-ada3-4d2f19ba7d07,labels Chamaecrista absus | herb_077 share one entity (3 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:36d4abc6-55cd-43c4-8df0-3c5ae66bedc8,labels Ipomea leucanthemum | herb_092 share one entity (2 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:43214fc0-8a13-4af6-bc50-5b2ff891d955,labels Oldenladia corymbosa | herb_020 share one entity (27 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:4821f54d-4b1b-4005-a7ce-0e57846592ea,labels Phyllanthus pantandrus | herb_022 share one entity (17 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:6bbc4cd9-1852-478e-b951-19cd65a144e5,labels Crotolaria heidmannii | herb_018 share one entity (8 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:6cfa0d1b-d0f6-4a6c-bd0d-5a0c3e586d9b,labels Tephrosia purpurea | herb_004 share one entity (113 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:8672383a-29fa-4e54-a614-d6ddbf04d8ea,labels Rhynchosia minima | herb_032 share one entity (2 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:86e48f75-a0d5-4cae-b0c7-f03a025bb150,labels Evolvulus alsinoides | herb_001 share one entity (66 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:87bf5d7b-ed1b-489a-8b71-31862f876fcf,labels Alectra orobanchoides | herb_003 share one entity (3 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:8c8d1146-7b63-440d-9262-4d0c6c3ef1fa,labels Macrotalyma daltonii | herb_027 share one entity (54 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:93680d11-c7a8-4065-9ed8-a2f060fdf7fa,labels Ipomea sinensis | herb_064 share one entity (2 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:a1b3e634-6534-4192-a798-023677156d35,labels Brachiara dura | herb_089 share one entity (7 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:b37d4db9-cf05-4ffd-9b91-2b3252248ead,labels Pechuel-loeschea leubnitziae | herb_053 share one entity (4 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:b630c2fa-2340-42d3-9141-8f4950e23968,labels Striga gesnerioides | herb_043 share one entity (2 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:c1518780-2f6d-47a8-8c15-b2c6e281b0e4,labels Setaria pumila | herb_079 share one entity (4 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:c314b961-ed35-4db8-9744-976abac154c8,labels Jacquemontia tannifolia | herb_028 share one entity (5 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:c9c6df41-df82-4bc5-87b7-63b84898087d,labels Rhynchosia totta | herb_015 share one entity (68 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:cb7ec77f-8e1d-4354-bfce-de3d13afdc8b,labels Crotolaria sphaerocarpa | herb_005 share one entity (11 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:d65b61be-9bf8-4e38-be98-c610048d6dd0,labels Polygala erioptera | herb_084 share one entity (8 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:d8ae21a7-5b8f-43df-8e16-b233dc6cb432,labels Erlangea misera | herb_057 share one entity (30 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:e984f07c-fab9-4dd1-b2c6-e09a22aebe24,labels Cenchrus bifloris | herb_075 share one entity (3 records); count as one identity
+X04,same entity recorded under two labels,warning,species,shared,,additional_species:ffacfbb9-22db-4332-9a80-35023dd5c233,labels Citrullus naudinianus | herb_060 share one entity (2 records); count as one identity

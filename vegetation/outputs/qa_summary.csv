@@ -1,0 +1,25 @@
+check_id,rule,n_all_exports,n_retained,severities,status
+S01,duplicate submission for plot,4,2,info,findings
+S02,rejected submission (excluded from summaries),2,0,info,findings
+S03,quadrat count or numbering not 1 to 20,0,0,,pass
+S04,form's end-of-survey species count differs from recount,23,22,warning,findings
+S05,survey duration outside 30 to 180 minutes,3,1,warning,findings
+S06,no active placeholders at survey start,1,1,info,findings
+P01,plot registered as not viable,1,1,info,findings
+P02,midpoint offset from prescribed point,6,6,error/warning,findings
+P03,straight A-B distance vs 50 m,16,16,error/warning,findings
+P04,endpoint half-lengths and midpoint off the A-B line,32,32,info/warning,findings
+P05,transect not north-south,30,30,info,findings
+P06,backup plot surveyed,1,1,info,findings
+P07,prescribed primary plots with no registration,1,1,error,findings
+Q01,"quadrat geopoint, accuracy or photo missing or inaccurate",0,0,,pass
+Q02,quadrat off the registered transect,147,142,error/warning,findings
+Q03,no herbaceous species in quadrat,7,7,info,findings
+Q04,additional-species answer disagrees with rows,10,9,warning,findings
+Q05,same identity entered twice in a quadrat,7,6,warning,findings
+Q06,form species count differs from IDs,0,0,,pass
+Q07,additional-species row with no species chosen,1,1,warning,findings
+X01,typed name not in Genus_species format,43,43,warning,findings
+X02,typed name already on the project species list,1,1,warning,findings
+X03,typed name not an exact GBIF match,13,13,info/warning,findings
+X04,same entity recorded under two labels,22,22,warning,findings
