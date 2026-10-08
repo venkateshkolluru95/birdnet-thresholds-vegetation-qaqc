@@ -1,0 +1,11 @@
+| field                                       | result among the viable registered plots                                                                                                               |
+|:--------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Woody plants present                        | yes 30                                                                                                                                                 |
+| Water nearby                                | no 30                                                                                                                                                  |
+| Canopy structure                            | open 23, closed 7                                                                                                                                      |
+| Canopy height (m)                           | 1 m: 2, 2 m: 10, 3 m: 10, 4 m: 7, 10 m: 1                                                                                                              |
+| Soil type                                   | beige_sand 15, grey_sand 12, white_sand 3                                                                                                              |
+| Ecosystem recorded                          | Scrub 29, Forest 1                                                                                                                                     |
+| Disturbance recorded                        | none 7; wildlife 20; human or livestock 12; both 9                                                                                                     |
+| Ground cover selections (overlapping)       | forbs 30, soil 28, grasses 22, non-dwarf_shrubs 18, litter 14, standing_npv 7                                                                          |
+| Dominant woody species listed (overlapping) | Vachellia tortilis 16, Boscia coriacea 9, Terminalia brownii 9, Vachellia mellifera 2, Mundulea sericea 1, Combretum aculeatum 1, Combretum collinum 1 |
