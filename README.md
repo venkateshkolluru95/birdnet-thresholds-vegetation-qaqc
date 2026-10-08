@@ -1,30 +1,37 @@
 # BirdNET observation thresholds and vegetation survey QA/QC
 
-## The two challenges
+Two small, fully commented Python pipelines and the reports written from them.
 
-**Birds.** BirdNET scores every 3-second clip with a confidence between 0 and 1, but that number is not a probability and means different things for different species. An ornithologist has checked 551 clips. Following Wood and Kahl (2024), I will fit, per species, a logistic regression of "prediction was correct" on the logit of the confidence, solve the curve for a 0.99 probability, and label every prediction in `birdnet_predictions.csv` with a new `observation` field. Then a handover note for the Tech team describing how to run this automatically.
+| Challenge | Start here | Code | Handover for the Tech team |
+|---|---|---|---|
+| Birds: turn BirdNET predictions into observations at 99 percent precision | [birds/REPORT.md](birds/REPORT.md) | [birds/01_fit_thresholds.py](birds/01_fit_thresholds.py) to [03_assemble_report.py](birds/03_assemble_report.py) | [birds/HANDOVER_TECH_TEAM.md](birds/HANDOVER_TECH_TEAM.md) |
+| Vegetation: join and QA the herbaceous survey; data quality report | [vegetation/DATA_QUALITY_REPORT.md](vegetation/DATA_QUALITY_REPORT.md) | [vegetation/01_load_and_join.py](vegetation/01_load_and_join.py) to [04_assemble_report.py](vegetation/04_assemble_report.py) | [vegetation/HANDOVER_TECH_TEAM.md](vegetation/HANDOVER_TECH_TEAM.md) |
 
-**Vegetation.** Herbaceous surveys of 20 quadrats per 50 m by 5 m belt transect, recorded in ODK. Four export tables and eleven entity lists need to be joined, checked against the two SOPs, and summarised in a data quality report (survey level, plot level, sampling effort, transect map). Errors are flagged, never fixed. Then a handover note describing an automated QA/QC dashboard.
+[DEVLOG.md](DEVLOG.md) records how the work unfolded.
 
-## Plan
+## Results in one screen
 
-1. Read the task description, both SOPs and the Wood and Kahl paper; list every number the SOPs commit to.
-2. Inspect every file before writing analysis code: row counts, keys, how the tables link, where the odd values are.
-3. Birds: thresholds script, labeling script, report, handover.
-4. Vegetation: join script, checks script, report script, data quality report, handover.
-5. Every script carries a plain-language header and a comment on each line or block, stating what is computed and at what level (clip, species, quadrat, plot, survey).
+**Birds.** Abyssinian Nightjar threshold 0.667 and Three-banded Plover 0.259, both from the logistic curve. African Black-headed Oriole 0.104: all 150 validated clips were correct, so no curve can be fitted and the lowest validated score is used, which certifies precision of at least 0.98. Red-billed Firefinch has no threshold, because the curve reaches 0.99 only above every validated clip. In total 21,331 of 29,491 predictions become observations. Output: `birds/outputs/birdnet_predictions_labeled.csv` with `observation`, `label_reason` and `threshold_method` columns.
 
-[DEVLOG.md](DEVLOG.md) records the work as it happens.
+**Vegetation.** 30 retained surveys over 29 primary and 1 backup savanna plot; the 6-plot shrubland stratum has no data in the exports. The 152 recorded labels resolve to 132 field identities, because 22 entities were recorded under two labels; 104 identities have a name and 28 are still unknown. The 24 rules flag 357 rows in the retained population, 21 of them errors. The main findings: two duplicate submissions, transect lengths from 23 to 66 m against a 50 m SOP, and one midpoint 34 m off its prescribed point. Every transect bears eastward, and the quadrats of Plot 05 lie 13 to 27 m from the registered transect. Ten typed names are spelled differently from GBIF, and the form's summary count measures the wrong quantity in 22 of 30 submissions. Nothing was corrected; every flag points to the exact record.
 
-## Data
-
-The input files live under `data/raw/birds/` and `data/raw/vegetation/`. They belong to the project and are not committed. Derived outputs will be.
-
-## Environment
-
-Python 3.13; packages in `requirements.txt`.
+## How to run
 
 ```bash
 pip install -r requirements.txt
+python birds/01_fit_thresholds.py && python birds/02_label_predictions.py && python birds/03_assemble_report.py
+python vegetation/01_load_and_join.py && python vegetation/02_qa_checks.py
+python vegetation/03_report_tables_and_maps.py && python vegetation/04_assemble_report.py
 ```
 
+Python 3.13. The scripts expect the input files under `data/raw/birds/` and `data/raw/vegetation/`. These are project data and are kept out of the repository; the derived outputs (thresholds, labeled predictions, cleaned tables, issues, figures) are included.
+
+## Layout
+
+```
+birds/        01_fit_thresholds.py, 02_label_predictions.py, 03_assemble_report.py, report_template.md -> REPORT.md,
+              HANDOVER_TECH_TEAM.md, outputs/, figures/
+vegetation/   01_load_and_join.py, 02_qa_checks.py, 03_report_tables_and_maps.py, 04_assemble_report.py,
+              report_template.md -> DATA_QUALITY_REPORT.md, HANDOVER_TECH_TEAM.md, outputs/, figures/
+data/raw/     the input files (kept out of the repository)
+```

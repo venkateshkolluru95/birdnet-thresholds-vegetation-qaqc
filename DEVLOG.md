@@ -37,3 +37,9 @@ Four scripts: join, checks, report tables and maps, report assembly. Each rule i
 Three findings came from the code rather than from reading. The form's end-of-survey species count differs from the rows in most submissions. Its calculation tests the list-species field at the wrong nesting level, so it only counts quadrats with additional species; this matches all 32 submissions exactly. Fourteen of 30 recorded midpoints lie more than 5 m off the straight A-B line, so quadrat distances are measured against the A-mid-B transect. And the quadrats of Plot 05 sit 13 to 27 m from the registered transect, which only became obvious on the zoomed map.
 
 A fuzzy match of typed names against the project list found almost nothing, because the misspelled genera are not on the list. Typed names are matched against the GBIF backbone instead, with the result cached.
+
+## 7. Reports and handovers
+
+I wrote the bird report, the vegetation data quality report, and one handover per challenge. Both reports are templates. Every table and every number in the prose is a placeholder filled from the pipeline's outputs. The assembler refuses to write the report if a placeholder is left, so the prose cannot go stale. The bird report was converted last, after a re-read turned up typed numbers that no longer matched the data.
+
+Each handover gives the tables, the SQL for the rules, run triggers, dashboard panels and tests.
