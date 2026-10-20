@@ -41,7 +41,7 @@ One row per reviewed clip: `validation_id`, `prediction_id` (foreign key into pr
 
 ### 2.4 `bird_observations` (new; a view, not a table)
 
-Applying thresholds is a join plus a CASE, so it should be a view that is always consistent with the current thresholds:
+Applying thresholds is a join plus a CASE, so it should be a view that is always consistent with the current thresholds. The SQL below is a prototype of the logic in `02_label_predictions.py`, written in the Tech team's language; it is not production code:
 
 ```sql
 CREATE VIEW bird_observations AS
@@ -49,9 +49,10 @@ SELECT p.*,
        t.threshold_id, t.threshold_confidence, t.method AS threshold_method,
        CASE WHEN t.threshold_confidence IS NOT NULL
              AND p.confidence >= t.threshold_confidence THEN p.common_name END AS observation,
-       CASE WHEN t.threshold_id IS NULL                    THEN 'no_threshold_for_species'
-            WHEN p.confidence >= t.threshold_confidence     THEN 'at_or_above_threshold'
-            ELSE                                                 'below_threshold' END AS label_reason
+       CASE WHEN p.confidence IS NULL OR p.confidence < 0 OR p.confidence > 1 THEN 'invalid_input'
+            WHEN t.threshold_confidence IS NULL                 THEN 'no_threshold_for_species'
+            WHEN p.confidence >= t.threshold_confidence         THEN 'at_or_above_threshold'
+            ELSE                                                     'below_threshold' END AS label_reason
 FROM birdnet_predictions p
 LEFT JOIN species_thresholds t
        ON t.species_code        = p.species_code
@@ -59,11 +60,11 @@ LEFT JOIN species_thresholds t
       AND t.site_id             = p.site_id
       AND t.birdnet_version     = p.birdnet_version
       AND t.birdnet_sensitivity = p.birdnet_sensitivity
-      AND t.is_current
-      AND t.threshold_confidence IS NOT NULL;
+      AND t.target_precision    = 0.99
+      AND t.is_current;
 ```
 
-The join must match on every column that scopes a threshold (site and sensitivity included), and `is_current` must be unique on that same key, or one prediction can join to several thresholds and be accepted by the wrong one. Add a check that confidence is within 0 to 1 before the comparison, as the Python script does. If dashboards need a materialized table for speed, refresh it whenever `species_thresholds` changes, and keep `threshold_id` on every published label so an old label can always be traced to the threshold that produced it.
+Three points for whoever implements it. The join must match on every column that scopes a threshold (site, sensitivity and target included), and `is_current` must be unique on that same key, or one prediction can join to several thresholds and be accepted by the wrong one. A threshold row with a null cutoff (the Firefinch) must still join, so the label can say the threshold was withheld on purpose rather than missing. And a view gives the current answer only: published labels should also be stored with their `threshold_id` and date, so an old report can be reproduced after a refit. If dashboards need a materialized table for speed, refresh it whenever `species_thresholds` changes.
 
 ## 3. The fitting job (Python 3.13, runs in the existing pipeline)
 
@@ -88,7 +89,7 @@ Runtime is seconds; the job can run synchronously after each validation batch. D
 | New validations committed for a species (starting point: at least 20 new clips, or any new clip for a species with fewer than 150) | refit that species |
 | New BirdNET version or changed sensitivity/overlap settings | no threshold for the new configuration until it has its own validations; old thresholds stay current for the old configuration and its old predictions |
 | New project or site | no thresholds inherited; validation campaign first (Wood and Kahl: thresholds are site and season specific) |
-| Monthly | compare the precision of the month's newly validated observations with the stored lower bound (Section 7); refitting the same data again proves nothing |
+| Monthly | check the newly validated observations for evidence that precision has fallen (Section 7); refitting the same data again proves nothing |
 
 ## 5. Validation sampling the platform should support
 
@@ -113,7 +114,7 @@ The quality of every threshold depends on where the validated clips sit on the c
 
 ## 7. Monitoring after launch
 
-- Keep validating a small random sample of **observations** (say 20 per species per month), and judge them over a rolling window of at least 100, because one error in 20 happens a third of the time even at a true precision of 0.98. Alert when the exact binomial lower bound of the window falls below the species' stored bound; then re-fit with the new clips.
+- Keep validating a small random sample of **observations** (say 20 per species per month) and judge them over a rolling window of at least 100 clips. Test whether the window's error rate is clearly above the 1 percent the threshold was set for (a one-sided binomial test against 0.99), and alert when it is; then re-fit with the new clips. Do not compare the window's lower bound with the stored one: a smaller sample always gives a lower bound, so 100 new clips that are all correct would still sit below the Oriole's stored 0.980 and trigger a false alarm.
 - Show the share kept honestly, and do not call it recall: the Nightjar keeps 31 percent of its predictions, the Oriole 98 percent. If an analysis needs recall (vocal activity rates, density), a lower target or an aggregation rule (for example a minimum number of observations per hour, as Kelly et al. 2023 did for owls) should be offered as a second view, not by lowering the observation threshold.
 - Dashboard tiles: per species, the threshold and its method, its bootstrap range with the resamples fitted, the precision lower bound, number of validations, date of last refit, and the share of predictions kept.
 
